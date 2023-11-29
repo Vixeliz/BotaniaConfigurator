@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "botaniaconfigurator",
+	"version": "${version}",
+	"name": "BotaniaConfigurator",
+	"description": "Makes Botania's flower mana usages, generation and speed configurable.",
+	"authors": [
+		"KonSola5"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/botaniaconfigurator/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"konsola5.botaniaconfigurator.BotaniaConfigurator"
+		],
+		"modmenu": [
+			"konsola5.botaniaconfigurator.ConfigModMenu"
+		]
+	},
+	"mixins": [
+		"botaniaconfigurator.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.25",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
