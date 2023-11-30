@@ -3,12 +3,22 @@ package konsola5.botaniaconfigurator.mixin.functional;
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 import vazkii.botania.common.block.flower.functional.LabelliaBlockEntity;
 
 @Mixin(LabelliaBlockEntity.class)
 public class LabelliaMixin {
+    /**
+     * @author KonSola5
+     * @reason Make mana capacity configurable.
+     */
+    @Overwrite(remap = false)
+    public int getMaxMana() {
+        return ConfigFile.labelliaManaCapacity;
+    }
+
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 500),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;getMana()I"),
