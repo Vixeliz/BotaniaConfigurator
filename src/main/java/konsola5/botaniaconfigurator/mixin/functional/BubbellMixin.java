@@ -16,7 +16,7 @@ public class BubbellMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getBubbell().manaCapacity;
+        return ConfigFile.bubbellManaCapacity;
     }
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 4),
@@ -25,7 +25,7 @@ public class BubbellMixin {
                     to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")),
             remap = false)
     private int configureCost1(int original) {
-        return ConfigFile.HANDLER.instance().getFunctional().getBubbell().manaCost;
+        return ConfigFile.bubbellManaCost;
     }
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -4),
@@ -34,16 +34,16 @@ public class BubbellMixin {
                     to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")),
             remap = false)
     private int configureCost2(int original) {
-        return -ConfigFile.HANDLER.instance().getFunctional().getBubbell().manaCost;
+        return -ConfigFile.bubbellManaCost;
     }
 
     @ModifyConstant(method = "isValidBubbell",constant = @Constant(intValue = 4),remap = false)
     private static int configureCost3(int original) {
-        return ConfigFile.HANDLER.instance().getFunctional().getBubbell().manaCost;
+        return ConfigFile.bubbellManaCost;
     }
 
     @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getBubbell().range);
+        cir.setReturnValue(ConfigFile.bubbellRange);
     }
 }

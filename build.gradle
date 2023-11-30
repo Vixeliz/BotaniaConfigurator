@@ -77,9 +77,11 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	dependencies {
-		modImplementation("dev.isxander.yacl:yet-another-config-lib-fabric:3.2.1+1.20")
-
 		modImplementation("vazkii.botania:Botania:1.20.1-441-FABRIC")
+
+		modImplementation("com.terraformersmc:modmenu:7.2.2")
+
+		modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}"
 	}
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

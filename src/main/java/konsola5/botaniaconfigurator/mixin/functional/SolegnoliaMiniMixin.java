@@ -13,6 +13,6 @@ public class SolegnoliaMiniMixin {
      */
     @Overwrite(remap = false)
     public double getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getSolegnolia().radiusMini;
+        return ConfigFile.solegnoliaRadiusMini;
     }
 }

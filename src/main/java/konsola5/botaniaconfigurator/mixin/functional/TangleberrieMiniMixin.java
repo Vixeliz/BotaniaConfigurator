@@ -15,7 +15,7 @@ public class TangleberrieMiniMixin {
      */
     @Overwrite(remap = false)
     public double getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().rangeMini;
+        return ConfigFile.tangleberrieRangeMini;
     }
 
     /**
@@ -24,6 +24,6 @@ public class TangleberrieMiniMixin {
      */
     @Overwrite(remap = false)
     public double getMaxDistance() {
-        return ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().maxDistanceMini;
+        return ConfigFile.tangleberrieMaxDistanceMini;
     }
 }

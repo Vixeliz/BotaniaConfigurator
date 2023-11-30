@@ -14,8 +14,8 @@ public class RannucarpusMiniMixin {
     @Overwrite(remap = false)
     public int getPlaceRange() {
         return ((RannuncarpusBlockEntity.Mini)(Object)this).getMana() > 0 ?
-                ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeXZManaMini:
-                ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeXZMini;
+                ConfigFile.rannucarpusPlacementRangeXZManaMini:
+                ConfigFile.rannucarpusPlacementRangeXZMini;
     }
 
     /**
@@ -24,6 +24,6 @@ public class RannucarpusMiniMixin {
      */
     @Overwrite(remap = false)
     public int getVerticalPlaceRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeYMini;
+        return ConfigFile.rannucarpusPlacementRangeYMini;
     }
 }

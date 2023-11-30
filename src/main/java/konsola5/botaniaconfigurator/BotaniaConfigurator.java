@@ -1,5 +1,6 @@
 package konsola5.botaniaconfigurator;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,14 +13,7 @@ public class BotaniaConfigurator implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		try {
-//			BotaniaConfiguratorConfig.cleanupOldConfig();
-			ConfigFile.HANDLER.load();
-//			BotaniaConfiguratorConfig.HANDLER.instance().validate();
-		} catch (Exception ex) {
-			LOGGER.error("Error loading BotaniaConfigurator config, restoring defaults!", ex);
-		}
-		ConfigFile.HANDLER.save();
+		MidnightConfig.init("botaniaconfigurator", ConfigFile.class);
 		LOGGER.info("Unharcoding Botania by leeching into literally every Botania flower.");
 	}
 }

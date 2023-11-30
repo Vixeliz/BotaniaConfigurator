@@ -19,7 +19,7 @@ public class OrechidIgnemMixin extends OrechidBlockEntity {
 
     @Override
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().manaCapacity;
+        return ConfigFile.orechidIgnemManaCapacity;
     }
 
     /**
@@ -28,25 +28,25 @@ public class OrechidIgnemMixin extends OrechidBlockEntity {
      */
     @Overwrite(remap = false)
     public int getCost() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().manaCost;
+        return ConfigFile.orechidIgnemManaCost;
     }
 
     @Override
     public int getDelay() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().delay;
+        return ConfigFile.orechidIgnemDelay;
     }
     @Override
     public int getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().rangeXZ;
+        return ConfigFile.orechidIgnemRangeXZ;
     }
     @Override
     public int getRangeY() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().rangeY;
+        return ConfigFile.orechidIgnemRangeY;
     }
 
     @Inject(method = "canOperate", at = @At("RETURN"), remap = false, cancellable = true)
     private void allowFlowerOutsideNether(CallbackInfoReturnable<Boolean> cir) {
-        if (!ConfigFile.HANDLER.instance().getFunctional().getOrechidIgnem().onlyWorksInNether) {
+        if (!ConfigFile.orechidIgnemOnlyWorksInNether) {
             cir.setReturnValue(true);
         }
     }

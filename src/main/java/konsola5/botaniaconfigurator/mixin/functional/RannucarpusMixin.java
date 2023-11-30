@@ -2,12 +2,9 @@ package konsola5.botaniaconfigurator.mixin.functional;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
-import vazkii.botania.api.block_entity.FunctionalFlowerBlockEntity;
 import vazkii.botania.common.block.flower.functional.RannuncarpusBlockEntity;
 
 @Mixin(RannuncarpusBlockEntity.class)
@@ -19,7 +16,7 @@ public class RannucarpusMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().manaCapacity;
+        return ConfigFile.rannucarpusManaCapacity;
     }
 
     /**
@@ -29,8 +26,8 @@ public class RannucarpusMixin {
     @Overwrite(remap = false)
     public int getPlaceRange() {
         return ((RannuncarpusBlockEntity)(Object)this).getMana() > 0 ?
-                ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeXZMana:
-                ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeXZ;
+                ConfigFile.rannucarpusPlacementRangeXZMana:
+                ConfigFile.rannucarpusPlacementRangeXZ;
     }
 
     /**
@@ -39,20 +36,20 @@ public class RannucarpusMixin {
      */
     @Overwrite(remap = false)
     public int getVerticalPlaceRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().placementRangeY;
+        return ConfigFile.rannucarpusPlacementRangeY;
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0), remap = false)
     private BlockPos configurePickupRange1(BlockPos instance, int dx, int dy, int dz) {
-        final int RANGEXZ = ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().pickupRangeXZ;
-        final int RANGEY = ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().pickupRangeY;
+        final int RANGEXZ = ConfigFile.rannucarpusPickupRangeXZ;
+        final int RANGEY = ConfigFile.rannucarpusPickupRangeY;
         return instance.offset(-RANGEXZ, -RANGEY, -RANGEXZ);
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
     private BlockPos configurePickupRange2(BlockPos instance, int dx, int dy, int dz) {
-        final int RANGEXZ = ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().pickupRangeXZ;
-        final int RANGEY = ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().pickupRangeY;
+        final int RANGEXZ = ConfigFile.rannucarpusPickupRangeXZ;
+        final int RANGEY = ConfigFile.rannucarpusPickupRangeY;
         return instance.offset(RANGEXZ + 1, RANGEY + 1, RANGEXZ + 1);
     }
 
@@ -62,22 +59,22 @@ public class RannucarpusMixin {
                     to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getLevel()Lnet/minecraft/world/level/Level;", ordinal = 1)),
             remap = false)
     private int configureDelay(int original){
-        return ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().delay;
+        return ConfigFile.rannucarpusDelay;
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getMana()I"), remap = false)
     private int configureCost1(RannuncarpusBlockEntity instance) {
-        return instance.getMana() + 1 - ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().manaCost;
+        return instance.getMana() + 1 - ConfigFile.rannucarpusManaCost;
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;addMana(I)V"), remap = false)
     private void configureCost2(RannuncarpusBlockEntity instance, int i) {
-        instance.addMana(-ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().manaCost);
+        instance.addMana(-ConfigFile.rannucarpusManaCost);
     }
 
     @ModifyConstant(method = "getSecondaryRadius",constant = @Constant(intValue = 2),
             remap = false)
     private int configurePickupRange3(int original){
-        return -ConfigFile.HANDLER.instance().getFunctional().getRannucarpus().pickupRangeXZ;
+        return -ConfigFile.rannucarpusPickupRangeXZ;
     }
 }

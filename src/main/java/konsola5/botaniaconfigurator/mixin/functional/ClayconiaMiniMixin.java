@@ -12,12 +12,12 @@ public class ClayconiaMiniMixin {
     @Inject(method = "getRange",
             at = @At("HEAD"),remap = false,cancellable = true)
     private void configureRangeXZ(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getClayconia().rangeXZMini);
+        cir.setReturnValue(ConfigFile.clayconiaRangeXZMini);
     }
 
     @Inject(method = "getRangeY",
             at = @At("HEAD"),remap = false,cancellable = true)
     private void configureRangeY(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getClayconia().rangeYMini);
+        cir.setReturnValue(ConfigFile.clayconiaRangeYMini);
     }
 }

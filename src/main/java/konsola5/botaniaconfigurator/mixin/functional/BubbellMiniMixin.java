@@ -11,6 +11,6 @@ import vazkii.botania.common.block.flower.functional.BubbellBlockEntity;
 public class BubbellMiniMixin {
     @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getBubbell().rangeMini);
+        cir.setReturnValue(ConfigFile.bubbellRangeMini);
     }
 }

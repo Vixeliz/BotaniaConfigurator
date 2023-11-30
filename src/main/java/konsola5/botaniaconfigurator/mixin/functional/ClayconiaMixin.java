@@ -15,7 +15,7 @@ public class ClayconiaMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getClayconia().manaCapacity;
+        return ConfigFile.clayconiaManaCapacity;
     }
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 80),
@@ -24,7 +24,7 @@ public class ClayconiaMixin {
                     to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;getCoordsToPut()Lnet/minecraft/core/BlockPos;")),
             remap = false)
     private int configureCost1(int original) {
-        return ConfigFile.HANDLER.instance().getFunctional().getClayconia().manaCost;
+        return ConfigFile.clayconiaManaCost;
     }
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -80),
@@ -33,18 +33,18 @@ public class ClayconiaMixin {
                     to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;addMana(I)V")),
             remap = false)
     private int configureCost2(int original) {
-        return -ConfigFile.HANDLER.instance().getFunctional().getClayconia().manaCost;
+        return -ConfigFile.clayconiaManaCost;
     }
 
     @Inject(method = "getRange",
             at = @At("HEAD"),remap = false,cancellable = true)
     private void configureRangeXZ(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getClayconia().rangeXZ);
+        cir.setReturnValue(ConfigFile.clayconiaRangeXZ);
     }
 
     @Inject(method = "getRangeY",
             at = @At("HEAD"),remap = false,cancellable = true)
     private void configureRangeY(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getClayconia().rangeY);
+        cir.setReturnValue(ConfigFile.clayconiaRangeY);
     }
 }

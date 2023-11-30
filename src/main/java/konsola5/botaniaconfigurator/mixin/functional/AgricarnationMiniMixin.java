@@ -11,6 +11,6 @@ import vazkii.botania.common.block.flower.functional.AgricarnationBlockEntity;
 public class AgricarnationMiniMixin {
     @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getAgricarnation().rangeMini);
+        cir.setReturnValue(ConfigFile.agricarnationRangeMini);
     }
 }

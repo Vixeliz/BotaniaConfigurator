@@ -14,7 +14,7 @@ public class AgricarnationMixin {
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/AgricarnationBlockEntity;getMana()I")),
             remap = false)
     private int configureCost(int constant) {
-        return ConfigFile.HANDLER.instance().getFunctional().getAgricarnation().manaCost;
+        return ConfigFile.agricarnationManaCost;
     }
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -5),
@@ -23,7 +23,7 @@ public class AgricarnationMixin {
                     to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/AgricarnationBlockEntity;addMana(I)V")),
             remap = false)
     private int configureCost2(int original) {
-        return -ConfigFile.HANDLER.instance().getFunctional().getAgricarnation().manaCost;
+        return -ConfigFile.agricarnationManaCost;
     }
 
     /**
@@ -32,12 +32,12 @@ public class AgricarnationMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getAgricarnation().manaCapacity;
+        return ConfigFile.agricarnationManaCapacity;
     }
 
     @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getAgricarnation().range);
+        cir.setReturnValue(ConfigFile.agricarnationRange);
     }
 }
 

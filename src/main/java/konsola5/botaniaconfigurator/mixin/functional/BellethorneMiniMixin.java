@@ -11,6 +11,6 @@ import vazkii.botania.common.block.flower.functional.BellethornBlockEntity;
 public class BellethorneMiniMixin {
     @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getBellethorne().rangeMini);
+        cir.setReturnValue(ConfigFile.bellethorneRangeMini);
     }
 }

@@ -39,7 +39,11 @@
     "functional.TangleberrieMiniMixin",
     "functional.TangleberrieMixin",
     "functional.TigerseyeMixin",
-    "functional.VinculotusMixin"
+    "functional.VinculotusMixin",
+    "generators.DandelifeonMixin",
+    "generators.EndoflameMixin",
+    "generators.EntropinnyumMixin",
+    "generators.GourmaryllisMixin"
   ],
   "injectors": {
     "defaultRequire": 1

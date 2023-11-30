@@ -3,8 +3,6 @@ package konsola5.botaniaconfigurator.mixin.functional;
 import konsola5.botaniaconfigurator.ConfigFile;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vazkii.botania.common.block.flower.functional.MarimorphosisBlockEntity;
 
 @Mixin(MarimorphosisBlockEntity.class)
@@ -16,7 +14,7 @@ public class MarimorphosisMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getMarimorphosis().manaCapacity;
+        return ConfigFile.marimorphosisManaCapacity;
     }
 
     /**
@@ -25,7 +23,7 @@ public class MarimorphosisMixin {
      */
     @Overwrite(remap = false)
     public int getCost() {
-        return ConfigFile.HANDLER.instance().getFunctional().getMarimorphosis().manaCost;
+        return ConfigFile.marimorphosisManaCost;
     }
 
     /**
@@ -34,7 +32,7 @@ public class MarimorphosisMixin {
      */
     @Overwrite(remap = false)
     public int getDelay() {
-        return ConfigFile.HANDLER.instance().getFunctional().getMarimorphosis().delay;
+        return ConfigFile.marimorphosisDelay;
     }
 
     /**
@@ -43,7 +41,7 @@ public class MarimorphosisMixin {
      */
     @Overwrite(remap = false)
     public int getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getMarimorphosis().rangeXZ;
+        return ConfigFile.marimorphosisRangeXZ;
     }
 
     /**
@@ -52,6 +50,6 @@ public class MarimorphosisMixin {
      */
     @Overwrite(remap = false)
     public int getRangeY() {
-        return ConfigFile.HANDLER.instance().getFunctional().getMarimorphosis().rangeY;
+        return ConfigFile.marimorphosisRangeY;
     }
 }

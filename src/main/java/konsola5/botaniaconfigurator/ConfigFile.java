@@ -1,732 +1,210 @@
 package konsola5.botaniaconfigurator;
 
-import com.google.gson.GsonBuilder;
-import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
-import dev.isxander.yacl3.config.v2.api.SerialEntry;
-import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.resources.ResourceLocation;
+import eu.midnightdust.lib.config.MidnightConfig;
 
-import static konsola5.botaniaconfigurator.BotaniaConfigurator.MOD_ID;
+public class ConfigFile extends MidnightConfig {
 
-public class ConfigFile {
-    public static ConfigClassHandler<ConfigFile> HANDLER = ConfigClassHandler.createBuilder(ConfigFile.class)
-            .id(new ResourceLocation(MOD_ID, "botaniaconfigurator"))
-            .serializer(config -> GsonConfigSerializerBuilder.create(config)
-                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("botania_configurator.json5"))
-                    .appendGsonBuilder(GsonBuilder::setPrettyPrinting) // not needed, pretty print by default
-                    .setJson5(true)
-                    .build())
-            .build();
+    @Comment(category = "generating", centered = true) public static Comment dandelifeon;
+    @Entry(category = "generating", min = 0, max = 100000) public static int dandelifeonManaCapacity = 50000;
+    @Entry(category = "generating", min = 0, max = 100000) public static int dandelifeonDelay = 10;
+    @Entry(category = "generating", min = 0, max = 100000) public static int dandelifeonManaPerGeneration = 60;
 
-//    public void validate() {
-//        if (this.client != null) this.client.validate();
-//        this.common.validate();
+    @Comment(category = "generating", centered = true) public static Comment endoflame;
+    @Entry(category = "generating", min = 0, max = 100000) public static int endoflameManaCapacity = 300;
+    @Entry(category = "generating", min = 0, max = 100000) public static int endoflameManaGenerationRate = 3;
+    @Entry(category = "generating", min = 0, max = 100000) public static int endoflameRange = 3;
+    @Entry(category = "generating", min = 0, max = 100000) public static int endoflameFuelCap = 32000;
+
+    @Comment(category = "generating", centered = true) public static Comment entropinnyum;
+    @Entry(category = "generating", min = 0, max = 100000) public static int entropinnyumManaCapacity = 6500;
+    @Entry(category = "generating", min = 0, max = 100000) public static int entropinnyumManaGenerationRate = 6500;
+    @Entry(category = "generating", min = 0, max = 100000) public static int entropinnyumDupedTNTGenerationRate = 6500;
+    @Entry(category = "generating", min = 0, max = 100000) public static int entropinnyumRange = 12;
+
+    // Functional Flowers
+
+    @Comment(category = "functional", centered = true) public static Comment agricarnation;
+        @Entry(category = "functional", min = 0, max = 100000) public static int agricarnationManaCapacity = 200;
+        @Entry(category = "functional", min = 0, max = 100000) public static int agricarnationManaCost = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int agricarnationRange = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int agricarnationRangeMini = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment bellethorne;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bellethorneManaCapacity = 1000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bellethorneManaCost = 24;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bellethorneRange = 6;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bellethorneRangeMini = 1;
+
+    @Comment(category = "functional", centered = true) public static Comment bergamute;
+        @Entry(category = "functional", min = 0, max = 100) public static double bergamuteRadius = 4;
+
+    @Comment(category = "functional", centered = true) public static Comment bubbell;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bubbellManaCapacity = 2000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bubbellManaCost = 4;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bubbellRange = 12;
+        @Entry(category = "functional", min = 0, max = 100000) public static int bubbellRangeMini = 6;
+
+    @Comment(category = "functional", centered = true) public static Comment clayconia;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaManaCapacity = 640;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaManaCost = 80;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaRangeXZ = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaRangeY = 3;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaRangeXZMini = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int clayconiaRangeYMini = 1;
+
+    @Comment(category = "functional", centered = true) public static Comment daffomill;
+        @Entry(category = "functional", min = 0, max = 100000) public static int daffomillManaCapacity = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int daffomillWidth = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int daffomillHeight = 3;
+        @Entry(category = "functional", min = 0, max = 100000) public static int daffomillLength = 16;
+        @Entry(category = "functional", min = 0, max = 10) public static double daffomillStrength = 0.05;
+
+    @Comment(category = "functional", centered = true) public static Comment dreadthorne;
+        @Entry(category = "functional", min = 0, max = 100000) public static int dreadthorneManaCost = 30;
+
+    @Comment(category = "functional", centered = true) public static Comment exoflame;
+        @Entry(category = "functional", min = 0, max = 100000) public static int exoflameManaCapacity = 300;
+        @Entry(category = "functional", min = 0, max = 100000) public static int exoflameManaCost = 300;
+        @Entry(category = "functional", min = 0, max = 100000) public static int exoflameRangeXZ = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int exoflameRangeY = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment fallenKanade;
+        @Entry(category = "functional", min = 0, max = 100000) public static int fallenKanadeManaCapacity = 900;
+        @Entry(category = "functional", min = 0, max = 100000) public static int fallenKanadeManaCost = 120;
+        @Entry(category = "functional", min = 0, max = 100000) public static int fallenKanadeRange = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment heiseiDream;
+        @Entry(category = "functional", min = 0, max = 100000) public static int heiseiDreamManaCapacity = 1000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int heiseiDreamManaCost = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int heiseiDreamRange = 5;
+
+    @Comment(category = "functional", centered = true) public static Comment hopperhock;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockManaCostPerPull = 1;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockManaCapacity = 20;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockRange = 6;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockRangeMana = 10;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockRangeMini = 1;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hopperhockRangeManaMini = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment hyacidus;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hyacidusManaCapacity = 180;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hyacidusManaCost = 20;
+        @Entry(category = "functional", min = 0, max = 100000) public static int hyacidusRange = 6;
+
+    @Comment(category = "functional", centered = true) public static Comment jadedAmaranthus;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jadedAmaranthusManaCapacity = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jadedAmaranthusManaCost = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jadedAmaranthusRange = 4;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jadedAmaranthusDelay = 30;
+
+    @Comment(category = "functional", centered = true) public static Comment jiyuulia;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jiyuuliaRange = 8;
+        @Entry(category = "functional", min = 0, max = 100000) public static int jiyuuliaRangeMini = 3;
+
+    @Comment(category = "functional", centered = true) public static Comment labellia;
+        @Entry(category = "functional", min = 0, max = 100000) public static int labelliaManaCapacity = 6000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int labelliaManaCost = 500;
+        @Entry(category = "functional", min = 0, max = 100000) public static int labelliaPickupRange = 0;
+        @Entry(category = "functional", min = 0, max = 100000) public static int labelliaRenameRange = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment loonium;
+        @Entry(category = "functional", min = 0, max = 100000) public static int looniumManaCapacity = 35000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int looniumManaCost = 35000;
+
+    @Comment(category = "functional", centered = true) public static Comment marimorphosis;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisManaCapacity = 1000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisManaCost = 12;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisDelay = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisRangeXZ = 8;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisRangeY = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisRangeXZMini = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int marimorphosisRangeYMini = 1;
+
+    @Comment(category = "functional", centered = true) public static Comment medumone;
+        @Entry(category = "functional", min = 0, max = 100000) public static int medumoneManaCapacity = 4000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int medumoneManaCost = 1;
+        @Entry(category = "functional", min = 0, max = 100000) public static int medumoneRange = 6;
+
+    @Comment(category = "functional", centered = true) public static Comment orechid;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidManaCapacity = 17500;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidManaCost = 17500;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidDelay = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidRangeXZ = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidRangeY = 3;
+
+    @Comment(category = "functional", centered = true) public static Comment orechidIgnem;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidIgnemManaCapacity = 20000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidIgnemManaCost = 20000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidIgnemDelay = 100;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidIgnemRangeXZ = 5;
+        @Entry(category = "functional", min = 0, max = 100000) public static int orechidIgnemRangeY = 3;
+        @Entry(category = "functional") public static boolean orechidIgnemOnlyWorksInNether = true;
+
+    @Comment(category = "functional", centered = true) public static Comment pollidisiac;
+        @Entry(category = "functional", min = 0, max = 100000) public static int pollidisiacManaCapacity = 120;
+        @Entry(category = "functional", min = 0, max = 100000) public static int pollidisiacManaCost = 12;
+        @Entry(category = "functional", min = 0, max = 100000) public static int pollidisiacRange = 6;
+
+    @Comment(category = "functional", centered = true) public static Comment rannucarpus;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusManaCapacity = 120;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusManaCost = 12;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPickupRangeXZ = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPickupRangeY = 3;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeXZ = 6;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeXZMana = 8;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeY = 6;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeXZMini = 3;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeXZManaMini = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusPlacementRangeYMini = 2;
+        @Entry(category = "functional", min = 0, max = 100000) public static int rannucarpusDelay = 10;
+
+    @Comment(category = "functional", centered = true) public static Comment solegnolia;
+        @Entry(category = "functional", min = 0, max = 100) public static double solegnoliaRadius = 5;
+        @Entry(category = "functional", min = 0, max = 100) public static double solegnoliaRadiusMini = 1;
+
+    @Comment(category = "functional", centered = true) public static Comment spectrantheum;
+        @Entry(category = "functional", min = 0, max = 100000) public static int spectrantheumManaCapacity = 5000;
+        @Entry(category = "functional", min = 0, max = 100) public static double spectrantheumManaCostMultiplier = 1;
+        @Entry(category = "functional", min = 0, max = 100000) public static int spectrantheumPickupRange = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment tangleberrie;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieManaCapacity = 20;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieManaCost = 1;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieRange = 7;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieMaxDistance = 6;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieRangeMini = 3;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tangleberrieMaxDistanceMini = 2;
+
+    @Comment(category = "functional", centered = true) public static Comment tigerseye;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tigerseyeManaCapacity = 1000;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tigerseyeManaCost = 70;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tigerseyeRangeXZ = 10;
+        @Entry(category = "functional", min = 0, max = 100000) public static int tigerseyeRangeY = 4;
+
+    @Comment(category = "functional", centered = true) public static Comment vinculotus;
+        @Entry(category = "functional", min = 0, max = 100000) public static int vinculotusManaCapacity = 500;
+        @Entry(category = "functional", min = 0, max = 100000) public static int vinculotusManaCost = 50;
+        @Entry(category = "functional", min = 0, max = 100) public static double vinculotusRadius = 64;
+
+    
+//    @Comment(category = "text") public static Comment text1;                       // Comments are rendered like an option without a button and are excluded from the config file
+//    @Comment(category = "text", centered = true) public static Comment text2;      // Centered comments are the same as normal ones - just centered!
+//    @Comment(category = "text") public static Comment spacer1;                     // Comments containing the word "spacer" will just appear as a blank line
+//    @Entry(category = "text") public static boolean showInfo = true;               // Example for a boolean option
+//    @Entry(category = "text") public static String name = "Hello World!";          // Example for a string option, which is in a category!
+//    @Entry(category = "text") public static TestEnum testEnum = TestEnum.FABRIC;   // Example for an enum option
+//    public enum TestEnum {                               // Enums allow the user to cycle through predefined options
+//        QUILT, FABRIC, FORGE
 //    }
+//    @Entry(category = "numbers") public static int fabric = 16777215;                 // Example for an int option
+//    @Entry(category = "numbers") public static double world = 1.4D;                   // Example for a double option
+//    @Entry(category = "numbers", min=69,max=420) public static int hello = 420;   // - The entered number has to be larger than 69 and smaller than 420
+//    @Entry(category = "text", width = 7, min = 7, isColor = true, name = "I am a color!") public static String titleColor = "#ffffff"; // The isColor property adds a preview box for a hexadecimal color
+//    @Entry(category = "text", name = "I am an array list!") public static List<String> arrayList = Lists.newArrayList("String1", "String2"); // Array String Lists are also supported
+//    @Entry(category = "sliders", name = "I am an int slider.",isSlider = true, min = 0, max = 100) public static int intSlider = 35; // Int fields can also be displayed as a Slider
+//    @Entry(category = "sliders", name = "I am a float slider!", isSlider = true, min = 0f, max = 1f, precision = 1000) public static float floatSlider = 0.24f; // And so can floats! Precision defines the amount of decimal places
+//    // The name field can be used to specify a custom translation string or plain text
+//
+//    public static int imposter = 16777215; // - Entries without an @Entry or @Comment annotation are ignored
 
-    @SuppressWarnings("FieldMayBeFinal")
-    @SerialEntry
-    private Common common = new Common();
-
-    public Common getCommon() {
-        return common;
-    }
-
-    @SuppressWarnings("FieldMayBeFinal")
-    @SerialEntry
-    private Generators generators = new Generators();
-
-    public Generators getGenerators() {
-        return generators;
-    }
-
-    @SuppressWarnings("FieldMayBeFinal")
-    @SerialEntry
-    private Functional functional = new Functional();
-
-    public Functional getFunctional() {
-        return functional;
-    }
-
-    public static class Common {
-        @SerialEntry
-        public boolean myCoolBoolean = true;
-
-        @SerialEntry
-        public int myCoolInteger = 5;
-
-        @SerialEntry(comment = "This string is amazing")
-        public String myCoolString = "How amazing!";
-    }
-
-    public static class Generators {
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Dandelifeon dandelifeon = new Dandelifeon();
-
-        public Dandelifeon getDandelifeon() {
-            return dandelifeon;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Endoflame endoflame = new Endoflame();
-
-        public Endoflame getEndoflame() {
-            return endoflame;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Entropinnyum entropinnyum = new Entropinnyum();
-
-        public Entropinnyum getEntropinnyum() {
-            return entropinnyum;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Hydroangeas hydroangeas = new Hydroangeas();
-
-        public Hydroangeas getHydroangeas() {
-            return hydroangeas;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Kekimurus kekimurus = new Kekimurus();
-
-        public Kekimurus getKekimurus() {
-            return kekimurus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Munchdew munchdew = new Munchdew();
-
-        public Munchdew getMunchdew() {
-            return munchdew;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Narslimmus narslimmus = new Narslimmus();
-
-        public Narslimmus getNarslimmus() {
-            return narslimmus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Rafflowsia rafflowsia = new Rafflowsia();
-
-        public Rafflowsia getRafflowsia() {
-            return rafflowsia;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private RosaArcana rosaArcana = new RosaArcana();
-
-        public RosaArcana getRosaArcana() {
-            return rosaArcana;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private ShulkMeNot shulkMeNot = new ShulkMeNot();
-
-        public ShulkMeNot getShulkMeNot() {
-            return shulkMeNot;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Spectrolus spectrolus = new Spectrolus();
-
-        public Spectrolus getSpectrolus() {
-            return spectrolus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Thermalily thermalily = new Thermalily();
-
-        public Thermalily getThermalily() {
-            return thermalily;
-        }
-
-        public static class Dandelifeon {
-
-        }
-
-        public static class Endoflame {
-
-        }
-
-        public static class Entropinnyum {
-
-        }
-
-        public static class Hydroangeas {
-
-        }
-
-        public static class Kekimurus {
-
-        }
-
-        public static class Munchdew {
-
-        }
-
-        public static class Narslimmus {
-
-        }
-
-        public static class Rafflowsia {
-
-        }
-
-        public static class RosaArcana {
-
-        }
-
-        public static class ShulkMeNot {
-
-        }
-
-        public static class Spectrolus {
-
-        }
-
-        public static class Thermalily {
-
-        }
-    }
-
-    public static class Functional {
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Agricarnation agricarnation = new Agricarnation();
-
-        public Agricarnation getAgricarnation() {
-            return agricarnation;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Bellethorne bellethorne = new Bellethorne();
-
-        public Bellethorne getBellethorne() {
-            return bellethorne;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Bergamute bergamute = new Bergamute();
-
-        public Bergamute getBergamute() {
-            return bergamute;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Bubbell bubbell = new Bubbell();
-
-        public Bubbell getBubbell() {
-            return bubbell;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Clayconia clayconia = new Clayconia();
-
-        public Clayconia getClayconia() {
-            return clayconia;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Daffomill daffomill = new Daffomill();
-
-        public Daffomill getDaffomill() {
-            return daffomill;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Dreadthorne dreadthorne = new Dreadthorne();
-
-        public Dreadthorne getDreadthorne() {
-            return dreadthorne;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Exoflame exoflame = new Exoflame();
-
-        public Exoflame getExoflame() {
-            return exoflame;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private FallenKanade fallenKanade = new FallenKanade();
-
-        public FallenKanade getFallenKanade() {
-            return fallenKanade;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private HeiseiDream heiseiDream = new HeiseiDream();
-
-        public HeiseiDream getHeiseiDream() {
-            return heiseiDream;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Hopperhock hopperhock = new Hopperhock();
-
-        public Hopperhock getHopperhock() {
-            return hopperhock;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Hyacidus hyacidus = new Hyacidus();
-
-        public Hyacidus getHyacidus() {
-            return hyacidus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private JadedAmaranthus jadedAmaranthus = new JadedAmaranthus();
-
-        public JadedAmaranthus getJadedAmaranthus() {
-            return jadedAmaranthus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Jiyuulia jiyuulia = new Jiyuulia();
-
-        public Jiyuulia getJiyuulia() {
-            return jiyuulia;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Labellia labellia = new Labellia();
-
-        public Labellia getLabellia() {
-            return labellia;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Loonium loonium = new Loonium();
-
-        public Loonium getLoonium() {
-            return loonium;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Marimorphosis marimorphosis = new Marimorphosis();
-
-        public Marimorphosis getMarimorphosis() {
-            return marimorphosis;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Medumone medumone = new Medumone();
-
-        public Medumone getMedumone() {
-            return medumone;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Orechid orechid = new Orechid();
-
-        public Orechid getOrechid() {
-            return orechid;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private OrechidIgnem orechidIgnem = new OrechidIgnem();
-
-        public OrechidIgnem getOrechidIgnem() {
-            return orechidIgnem;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Pollidisiac pollidisiac = new Pollidisiac();
-
-        public Pollidisiac getPollidisiac() {
-            return pollidisiac;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Rannucarpus rannucarpus = new Rannucarpus();
-
-        public Rannucarpus getRannucarpus() {
-            return rannucarpus;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Solegnolia solegnolia = new Solegnolia();
-
-        public Solegnolia getSolegnolia() {
-            return solegnolia;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Spectrantheum spectrantheum = new Spectrantheum();
-
-        public Spectrantheum getSpectrantheum() {
-            return spectrantheum;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Tangleberrie tangleberrie = new Tangleberrie();
-
-        public Tangleberrie getTangleberrie() {
-            return tangleberrie;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Tigerseye tigerseye = new Tigerseye();
-
-        public Tigerseye getTigerseye() {
-            return tigerseye;
-        }
-
-        @SuppressWarnings("FieldMayBeFinal")
-        @SerialEntry
-        private Vinculotus vinculotus = new Vinculotus();
-
-        public Vinculotus getVinculotus() {
-            return vinculotus;
-        }
-
-        public static class Agricarnation {
-            @SerialEntry
-            public int manaCapacity = 200;
-            @SerialEntry
-            public int manaCost = 5;
-            @SerialEntry
-            public int range = 5;
-            @SerialEntry
-            public int rangeMini = 2;
-
-        }
-
-        public static class Bellethorne {
-            @SerialEntry
-            public int manaCapacity = 1000;
-            @SerialEntry
-            public int manaCost = 24;
-            @SerialEntry
-            public int range = 6;
-            @SerialEntry
-            public int rangeMini = 1;
-        }
-
-        public static class Bergamute {
-            @SerialEntry
-            public double radius = 4;
-        }
-
-        public static class Bubbell {
-            @SerialEntry
-            public int manaCapacity = 2000;
-            @SerialEntry
-            public int manaCost = 4;
-            @SerialEntry
-            public int range = 12;
-            @SerialEntry
-            public int rangeMini = 6;
-        }
-
-        public static class Clayconia {
-            @SerialEntry
-            public int manaCapacity = 640;
-            @SerialEntry
-            public int manaCost = 80;
-            @SerialEntry
-            public int rangeXZ = 5;
-            @SerialEntry
-            public int rangeY = 3;
-            @SerialEntry
-            public int rangeXZMini = 2;
-            @SerialEntry
-            public int rangeYMini = 1;
-        }
-
-        public static class Daffomill {
-            @SerialEntry
-            public int manaCapacity = 100;
-            @SerialEntry
-            public int width = 2;
-            @SerialEntry
-            public int height = 3;
-            @SerialEntry
-            public int length = 16;
-            @SerialEntry
-            public double strength = 0.05;
-        }
-
-        public static class Dreadthorne {
-            @SerialEntry
-            public int manaCost = 30;
-        }
-
-        public static class Exoflame {
-            @SerialEntry
-            public int manaCapacity = 300;
-            @SerialEntry
-            public int manaCost = 300;
-            @SerialEntry
-            public int rangeXZ = 5;
-            @SerialEntry
-            public int rangeY = 2;
-        }
-
-        public static class FallenKanade {
-            @SerialEntry
-            public int manaCapacity = 900;
-            @SerialEntry
-            public int manaCost = 120;
-            @SerialEntry
-            public int range = 2;
-        }
-
-        public static class HeiseiDream {
-            @SerialEntry
-            public int manaCapacity = 1000;
-            @SerialEntry
-            public int manaCost = 100;
-            @SerialEntry
-            public int range = 5;
-        }
-
-        public static class Hopperhock {
-            @SerialEntry
-            public int manaCostPerPull = 1;
-            @SerialEntry
-            public int manaCapacity = 20;
-            @SerialEntry
-            public int range = 6;
-            @SerialEntry
-            public int rangeMana = 10;
-            @SerialEntry
-            public int rangeMini = 1;
-            @SerialEntry
-            public int rangeManaMini = 2;
-        }
-
-        public static class Hyacidus {
-            @SerialEntry
-            public int manaCapacity = 180;
-            @SerialEntry
-            public int manaCost = 20;
-            @SerialEntry
-            public int range = 6;
-        }
-
-        public static class JadedAmaranthus {
-            @SerialEntry
-            public int manaCapacity = 100;
-            @SerialEntry
-            public int manaCost = 100;
-            @SerialEntry
-            public int range = 4;
-            @SerialEntry
-            public int delay = 30;
-        }
-
-        public static class Jiyuulia {
-            @SerialEntry
-            public int range = 8;
-            @SerialEntry
-            public int rangeMini = 3;
-        }
-
-        public static class Labellia {
-            @SerialEntry
-            public int manaCapacity = 6000;
-            @SerialEntry
-            public int manaCost = 500;
-            @SerialEntry
-            public int pickupRange = 0;
-            @SerialEntry
-            public int renameRange = 2;
-        }
-
-        public static class Loonium {
-            @SerialEntry
-            public int manaCapacity = 35000;
-            @SerialEntry
-            public int manaCost = 35000;
-        }
-
-        public static class Marimorphosis {
-            @SerialEntry
-            public int manaCapacity = 1000;
-            @SerialEntry
-            public int manaCost = 12;
-            @SerialEntry
-            public int delay = 2;
-            @SerialEntry
-            public int rangeXZ = 8;
-            @SerialEntry
-            public int rangeY = 5;
-            @SerialEntry
-            public int rangeXZMini = 2;
-            @SerialEntry
-            public int rangeYMini = 1;
-        }
-
-        public static class Medumone {
-            @SerialEntry
-            public int manaCapacity = 4000;
-            @SerialEntry
-            public int manaCost = 1;
-            @SerialEntry
-            public int range = 6;
-        }
-
-        public static class Orechid {
-            @SerialEntry
-            public int manaCapacity = 17500;
-            @SerialEntry
-            public int manaCost = 17500;
-            @SerialEntry
-            public int delay = 100;
-            @SerialEntry
-            public int rangeXZ = 5;
-            @SerialEntry
-            public int rangeY = 3;
-
-        }
-
-        public static class OrechidIgnem {
-            @SerialEntry
-            public int manaCapacity = 20000;
-            @SerialEntry
-            public int manaCost = 20000;
-            @SerialEntry
-            public int delay = 100;
-            @SerialEntry
-            public int rangeXZ = 5;
-            @SerialEntry
-            public int rangeY = 3;
-            @SerialEntry
-            public boolean onlyWorksInNether = true;
-        }
-
-        public static class Pollidisiac {
-            @SerialEntry
-            public int manaCapacity = 120;
-            @SerialEntry
-            public int manaCost = 12;
-            @SerialEntry
-            public int range = 6;
-        }
-
-        public static class Rannucarpus {
-            @SerialEntry
-            public int manaCapacity = 120;
-            @SerialEntry
-            public int manaCost = 12;
-            @SerialEntry
-            public int pickupRangeXZ = 2;
-            @SerialEntry
-            public int pickupRangeY = 3;
-            @SerialEntry
-            public int placementRangeXZ = 6;
-            @SerialEntry
-            public int placementRangeXZMana = 8;
-            @SerialEntry
-            public int placementRangeY = 6;
-            @SerialEntry
-            public int placementRangeXZMini = 3;
-            @SerialEntry
-            public int placementRangeXZManaMini = 2;
-            @SerialEntry
-            public int placementRangeYMini = 2;
-            @SerialEntry
-            public int delay = 10;
-        }
-
-        public static class Solegnolia {
-            @SerialEntry
-            public double radius = 5;
-            @SerialEntry
-            public double radiusMini = 1;
-        }
-
-        public static class Spectrantheum {
-            @SerialEntry
-            public int manaCapacity = 5000;
-            @SerialEntry
-            public double manaCostMultiplier = 1;
-            @SerialEntry
-            public int pickupRange = 2;
-        }
-
-        public static class Tangleberrie {
-            @SerialEntry
-            public int manaCapacity = 20;
-
-            @SerialEntry
-            public int manaCost = 1;
-
-            @SerialEntry
-            public int range = 7;
-
-            @SerialEntry
-            public int maxDistance = 6;
-
-            @SerialEntry
-            public int rangeMini = 3;
-
-            @SerialEntry
-            public int maxDistanceMini = 2;
-        }
-
-        public static class Tigerseye {
-            @SerialEntry
-            public int manaCapacity = 1000;
-            @SerialEntry
-            public int manaCost = 70;
-            @SerialEntry
-            public int rangeXZ = 10;
-            @SerialEntry
-            public int rangeY = 4;
-        }
-
-        public static class Vinculotus {
-            @SerialEntry
-            public int manaCapacity = 500;
-            @SerialEntry
-            public int manaCost = 50;
-            @SerialEntry
-            public double radius = 64;
-        }
-    }
 }

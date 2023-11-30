@@ -16,16 +16,16 @@ public class BellethorneMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getBellethorne().manaCapacity;
+        return ConfigFile.bellethorneManaCapacity;
     }
 
     @Inject(method = "getManaCost",at = @At("RETURN"),remap = false,cancellable = true)
     private void configManaCost(CallbackInfoReturnable<Integer> cir){
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getBellethorne().manaCost);
+        cir.setReturnValue(ConfigFile.bellethorneManaCost);
     }
 
     @Inject(method = "getRange",at = @At("RETURN"),remap = false,cancellable = true)
     private void configRange(CallbackInfoReturnable<Integer> cir){
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getBellethorne().range);
+        cir.setReturnValue(ConfigFile.bellethorneRange);
     }
 }

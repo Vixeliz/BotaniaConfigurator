@@ -9,7 +9,7 @@ import vazkii.botania.common.block.flower.functional.BergamuteBlockEntity;
 public class BergamuteMixin {
     @ModifyArg(method = "getRadius",at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Circle;<init>(Lnet/minecraft/core/BlockPos;D)V"), index = 1)
     private double configRadius(double radius){
-        return ConfigFile.HANDLER.instance().getFunctional().getBergamute().radius;
+        return ConfigFile.bergamuteRadius;
     }
 
     // If Botania for some reason changes the RANGE, check this. Originally, RANGE = 4.
@@ -18,6 +18,6 @@ public class BergamuteMixin {
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;distToCenterSqr(DDD)D")),
             remap = false)
     private static double configRadius2(double constant) {
-        return Math.pow(ConfigFile.HANDLER.instance().getFunctional().getBergamute().radius, 2);
+        return Math.pow(ConfigFile.bergamuteRadius, 2);
     }
 }

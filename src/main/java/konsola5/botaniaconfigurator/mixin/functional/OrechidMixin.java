@@ -3,9 +3,6 @@ package konsola5.botaniaconfigurator.mixin.functional;
 import konsola5.botaniaconfigurator.ConfigFile;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vazkii.botania.common.block.flower.functional.OrechidBlockEntity;
 
 @Mixin(OrechidBlockEntity.class)
@@ -16,7 +13,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechid().manaCapacity;
+        return ConfigFile.orechidManaCapacity;
     }
 
     /**
@@ -25,7 +22,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getCost() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechid().manaCost;
+        return ConfigFile.orechidManaCost;
     }
 
     /**
@@ -34,7 +31,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getDelay() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechid().delay;
+        return ConfigFile.orechidDelay;
     }
 
     /**
@@ -43,7 +40,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechid().rangeXZ;
+        return ConfigFile.orechidRangeXZ;
     }
 
     /**
@@ -52,6 +49,6 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getRangeY() {
-        return ConfigFile.HANDLER.instance().getFunctional().getOrechid().rangeY;
+        return ConfigFile.orechidRangeY;
     }
 }

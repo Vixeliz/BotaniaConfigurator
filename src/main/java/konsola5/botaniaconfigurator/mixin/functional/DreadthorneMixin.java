@@ -11,6 +11,6 @@ import vazkii.botania.common.block.flower.functional.DreadthornBlockEntity;
 public class DreadthorneMixin {
     @Inject(method = "getManaCost",at = @At("RETURN"),remap = false,cancellable = true)
     private void configManaCost(CallbackInfoReturnable<Integer> cir){
-        cir.setReturnValue(ConfigFile.HANDLER.instance().getFunctional().getDreadthorne().manaCost);
+        cir.setReturnValue(ConfigFile.dreadthorneManaCost);
     }
 }

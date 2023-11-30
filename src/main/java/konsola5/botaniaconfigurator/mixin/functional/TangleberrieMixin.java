@@ -15,7 +15,7 @@ public class TangleberrieMixin {
      */
     @Overwrite(remap = false)
     public int getMaxMana() {
-        return ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().manaCapacity;
+        return ConfigFile.tangleberrieManaCapacity;
     }
 
     /**
@@ -24,7 +24,7 @@ public class TangleberrieMixin {
      */
     @Overwrite(remap = false)
     public double getRange() {
-        return ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().range;
+        return ConfigFile.tangleberrieRange;
     }
 
     /**
@@ -33,11 +33,11 @@ public class TangleberrieMixin {
      */
     @Overwrite(remap = false)
     public double getMaxDistance() {
-        return ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().maxDistance;
+        return ConfigFile.tangleberrieMaxDistance;
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/TangleberrieBlockEntity;addMana(I)V"), remap = false)
     private void configureCost(TangleberrieBlockEntity instance, int i) {
-        instance.addMana(-ConfigFile.HANDLER.instance().getFunctional().getTangleberrie().manaCost);
+        instance.addMana(-ConfigFile.tangleberrieManaCost);
     }
 }
