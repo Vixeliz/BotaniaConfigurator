@@ -3,7 +3,6 @@
   "package": "konsola5.botaniaconfigurator.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ExampleMixin",
     "functional.AgricarnationMiniMixin",
     "functional.AgricarnationMixin",
     "functional.BellethorneMiniMixin",

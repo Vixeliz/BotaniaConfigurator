@@ -8,8 +8,9 @@
 		"KonSola5"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/botaniaconfigurator",
+		"sources": "https://github.com/KonSola5/BotaniaConfigurator",
+		"issues": "https://github.com/KonSola5/BotaniaConfigurator/issues"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/botaniaconfigurator/icon.png",
