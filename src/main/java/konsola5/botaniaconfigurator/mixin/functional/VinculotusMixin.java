@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
 import vazkii.botania.common.block.flower.functional.VinculotusBlockEntity;
 
-@Debug(export = true)
 @Mixin(VinculotusBlockEntity.class)
 public class VinculotusMixin {
     /**

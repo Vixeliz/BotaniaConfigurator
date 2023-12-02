@@ -2,13 +2,32 @@ package konsola5.botaniaconfigurator.mixin.generators;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import vazkii.botania.common.block.flower.generating.SpectrolusBlockEntity;
+
+import java.util.Objects;
 
 @Mixin(SpectrolusBlockEntity.class)
 public class SpectrolusMixin {
+    private int passiveDecayTicks;
+    @Inject(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/GeneratingFlowerBlockEntity;tickFlower()V", shift = At.Shift.AFTER), cancellable = true, remap = false)
+    private void decayFlower(CallbackInfo ci) {
+        if (ConfigFile.spectrolusDecays) {
+            if (!Objects.requireNonNull(((SpectrolusBlockEntity) (Object) this).getLevel()).isClientSide) {
+                if (++passiveDecayTicks > ConfigFile.spectrolusDecayTime) {
+                    ((SpectrolusBlockEntity) (Object) this).getLevel().destroyBlock(((SpectrolusBlockEntity) (Object) this).getBlockPos(), false);
+                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(((SpectrolusBlockEntity) (Object) this).getLevel(), ((SpectrolusBlockEntity) (Object) this).getBlockPos())) {
+                        ((SpectrolusBlockEntity) (Object) this).getLevel().setBlockAndUpdate(((SpectrolusBlockEntity) (Object) this).getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+                    }
+                    ci.cancel();
+                }
+            }
+        }
+    }
     /**
      * @author KonSola5
      * @reason Make Mana Capacity modifiable.

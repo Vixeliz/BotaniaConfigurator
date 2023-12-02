@@ -13,6 +13,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int dandelifeonManaCapacity = 50000;
     @Entry(category = "generating", min = 1, max = 1000) public static int dandelifeonDelay = 10;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int dandelifeonManaPerGeneration = 60;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int dandelifeonDecayTime = 72000;
+    @Entry(category = "generating") public static boolean dandelifeonDecays = false;
 
 
     @SuppressWarnings("unused")
@@ -21,6 +23,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int endoflameManaGenerationRate = 3;
     @Entry(category = "generating", min = 0, max = 25) public static int endoflameRange = 3;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int endoflameFuelCap = 32000;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int endoflameDecayTime = 72000;
+    @Entry(category = "generating") public static boolean endoflameDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment entropinnyum;
@@ -28,6 +32,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int entropinnyumManaGenerationRate = 6500;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int entropinnyumDupedTNTGenerationRate = 3;
     @Entry(category = "generating", min = 0, max = 100) public static int entropinnyumRange = 12;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int entropinnyumDecayTime = 72000;
+    @Entry(category = "generating") public static boolean entropinnyumDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment gourmaryllis;
@@ -48,6 +54,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = 1000) public static int gourmaryllisFoodCooldownFactor = 10;
     @Entry(category = "generating", min = 0, max = 1000) public static int gourmaryllisFoodManaFactor = 70;
     @Entry(category = "generating", min = 0, max = 25) public static int gourmaryllisRange = 1;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int gourmaryllisDecayTime = 72000;
+    @Entry(category = "generating") public static boolean gourmaryllisDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment hydroangeas;
@@ -65,6 +73,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int kekimurusManaGenerationRate = 1800;
     @Entry(category = "generating", min = 1, max = 1000) public static int kekimurusDelay = 80;
     @Entry(category = "generating", min = 1, max = 100) public static int kekimurusRange = 5;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int kekimurusDecayTime = 72000;
+    @Entry(category = "generating") public static boolean kekimurusDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment munchdew;
@@ -74,12 +84,17 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int munchdewCooldown = 1600;
     @Entry(category = "generating", min = 0, max = 100) public static int munchdewRangeXZ = 8;
     @Entry(category = "generating", min = 0, max = 100) public static int munchdewRangeY = 16;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int munchdewDecayTime = 72000;
+    @Entry(category = "generating") public static boolean munchdewDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment narslimmus;
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int narslimmusManaCapacity = 19200;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int narslimmusBaseManaGenerationRate = 1200;
     @Entry(category = "generating", min = 0, max = 100) public static int narslimmusRange = 2;
+
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int narslimmusDecayTime = 72000;
+    @Entry(category = "generating") public static boolean narslimmusDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment rafflowsia;
@@ -97,18 +112,24 @@ public class ConfigFile extends MidnightConfig {
         return list;
     }
     @Entry(category = "generating", min = 0, max = 25) public static int rafflowsiaRange = 1;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int rafflowsiaDecayTime = 72000;
+    @Entry(category = "generating") public static boolean rafflowsiaDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment rosaArcana;
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int rosaArcanaManaCapacity = 6000;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int rosaArcanaManaGenerationRate = 50;
     @Entry(category = "generating", min = 0, max = 100) public static int rosaArcanaRange = 1;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int rosaArcanaDecayTime = 72000;
+    @Entry(category = "generating") public static boolean rosaArcanaDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment shulkMeNot;
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int shulkMeNotManaCapacity = 75000;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int shulkMeNotManaGenerationRate = 75000;
     @Entry(category = "generating", min = 0, max = 100) public static double shulkMeNotRadius = 8;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int shulkMeNotDecayTime = 72000;
+    @Entry(category = "generating") public static boolean shulkMeNotDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment spectrolus;
@@ -117,6 +138,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusManaPerSheep = 5000;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusManaPerBabySheep = 1;
     @Entry(category = "generating", min = 0, max = 1000) public static int spectrolusRange = 1;
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusDecayTime = 72000;
+    @Entry(category = "generating") public static boolean spectrolusDecays = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment thermalily;
@@ -125,7 +148,8 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int thermalilyManaGenerationRate = 45;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int thermalilyCooldownFactor = 400;
     @Entry(category = "generating") public static List<String> thermalilyCooldownRolls = List.of("10", "5", "3", "2", "1", "1", "3", "3", "3", "2", "1", "1", "1", "2", "2");
-
+    @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int thermalilyDecayTime = 72000;
+    @Entry(category = "generating") public static boolean thermalilyDecays = false;
 
     public static int[] thermalilyCooldownList() {
         int[] list;
@@ -174,10 +198,14 @@ public class ConfigFile extends MidnightConfig {
     @Comment(category = "functional", centered = true) public static Comment clayconia;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int clayconiaManaCapacity = 640;
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int clayconiaManaCost = 80;
+
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int clayconiaDelay = 5;
         @Entry(category = "functional", min = 0, max = 100) public static int clayconiaRangeXZ = 5;
         @Entry(category = "functional", min = 0, max = 100) public static int clayconiaRangeY = 3;
         @Entry(category = "functional", min = 0, max = 100) public static int clayconiaRangeXZMini = 2;
         @Entry(category = "functional", min = 0, max = 100) public static int clayconiaRangeYMini = 1;
+
+        @Entry(category = "functional") public static boolean clayconiaBuff = false;
 
     @SuppressWarnings("unused")
     @Comment(category = "functional", centered = true) public static Comment daffomill;

@@ -2,19 +2,39 @@ package konsola5.botaniaconfigurator.mixin.generators;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import vazkii.botania.common.block.flower.generating.DandelifeonBlockEntity;
 import vazkii.botania.common.block.flower.generating.GourmaryllisBlockEntity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
-@Debug(export = true)
 @Mixin(GourmaryllisBlockEntity.class)
 public class GourmaryllisMixin {
     private static final double[] STREAK_MULTIPLIERS = ConfigFile.gourmaryllisStreakList();
+
+    private int passiveDecayTicks;
+    @Inject(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/GeneratingFlowerBlockEntity;tickFlower()V", shift = At.Shift.AFTER), cancellable = true, remap = false)
+    private void decayFlower(CallbackInfo ci) {
+        if (ConfigFile.gourmaryllisDecays) {
+            if (!Objects.requireNonNull(((GourmaryllisBlockEntity) (Object) this).getLevel()).isClientSide) {
+                if (++passiveDecayTicks > ConfigFile.gourmaryllisDecayTime) {
+                    ((GourmaryllisBlockEntity) (Object) this).getLevel().destroyBlock(((GourmaryllisBlockEntity) (Object) this).getBlockPos(), false);
+                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(((GourmaryllisBlockEntity) (Object) this).getLevel(), ((GourmaryllisBlockEntity) (Object) this).getBlockPos())) {
+                        ((GourmaryllisBlockEntity) (Object) this).getLevel().setBlockAndUpdate(((GourmaryllisBlockEntity) (Object) this).getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+                    }
+                    ci.cancel();
+                }
+            }
+        }
+    }
 
     /**
      * @author KonSola5

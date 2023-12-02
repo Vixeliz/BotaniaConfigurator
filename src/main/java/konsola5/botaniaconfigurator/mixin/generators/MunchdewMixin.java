@@ -2,15 +2,36 @@ package konsola5.botaniaconfigurator.mixin.generators;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import vazkii.botania.common.block.flower.functional.TangleberrieBlockEntity;
+import vazkii.botania.common.block.flower.generating.DandelifeonBlockEntity;
 import vazkii.botania.common.block.flower.generating.KekimurusBlockEntity;
 import vazkii.botania.common.block.flower.generating.MunchdewBlockEntity;
 
+import java.util.Objects;
+
 @Mixin(MunchdewBlockEntity.class)
 public class MunchdewMixin {
+    private int passiveDecayTicks;
+    @Inject(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/GeneratingFlowerBlockEntity;tickFlower()V", shift = At.Shift.AFTER), cancellable = true, remap = false)
+    private void decayFlower(CallbackInfo ci) {
+        if (ConfigFile.munchdewDecays) {
+            if (!Objects.requireNonNull(((MunchdewBlockEntity) (Object) this).getLevel()).isClientSide) {
+                if (++passiveDecayTicks > ConfigFile.munchdewDecayTime) {
+                    ((MunchdewBlockEntity) (Object) this).getLevel().destroyBlock(((MunchdewBlockEntity) (Object) this).getBlockPos(), false);
+                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(((MunchdewBlockEntity) (Object) this).getLevel(), ((MunchdewBlockEntity) (Object) this).getBlockPos())) {
+                        ((MunchdewBlockEntity) (Object) this).getLevel().setBlockAndUpdate(((MunchdewBlockEntity) (Object) this).getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+                    }
+                    ci.cancel();
+                }
+            }
+        }
+    }
+
     /**
      * @author KonSola5
      * @reason Make Mana Capacity modifiable.

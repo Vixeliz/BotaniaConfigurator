@@ -1,13 +1,34 @@
 package konsola5.botaniaconfigurator.mixin.generators;
 
 import konsola5.botaniaconfigurator.ConfigFile;
+import net.minecraft.world.level.block.Blocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import vazkii.botania.common.block.flower.generating.DandelifeonBlockEntity;
 import vazkii.botania.common.block.flower.generating.KekimurusBlockEntity;
+
+import java.util.Objects;
 
 @Mixin(KekimurusBlockEntity.class)
 public class KekimurusMixin {
+    private int passiveDecayTicks;
+    @Inject(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/GeneratingFlowerBlockEntity;tickFlower()V", shift = At.Shift.AFTER), cancellable = true, remap = false)
+    private void decayFlower(CallbackInfo ci) {
+        if (ConfigFile.kekimurusDecays) {
+            if (!Objects.requireNonNull(((KekimurusBlockEntity) (Object) this).getLevel()).isClientSide) {
+                if (++passiveDecayTicks > ConfigFile.kekimurusDecayTime) {
+                    ((KekimurusBlockEntity) (Object) this).getLevel().destroyBlock(((KekimurusBlockEntity) (Object) this).getBlockPos(), false);
+                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(((KekimurusBlockEntity) (Object) this).getLevel(), ((KekimurusBlockEntity) (Object) this).getBlockPos())) {
+                        ((KekimurusBlockEntity) (Object) this).getLevel().setBlockAndUpdate(((KekimurusBlockEntity) (Object) this).getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+                    }
+                    ci.cancel();
+                }
+            }
+        }
+    }
+
     /**
      * @author KonSola5
      * @reason Make Mana Capacity modifiable.
