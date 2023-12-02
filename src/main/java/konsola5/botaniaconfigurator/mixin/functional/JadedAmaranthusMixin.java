@@ -21,8 +21,7 @@ public class JadedAmaranthusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 100),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")))
     private int configureCost1(int original) {
         return ConfigFile.jadedAmaranthusManaCost;
     }
@@ -30,8 +29,7 @@ public class JadedAmaranthusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -100),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;sync()V")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;sync()V")))
     private int configureCost2(int original) {
         return -ConfigFile.jadedAmaranthusManaCost;
     }
@@ -39,7 +37,7 @@ public class JadedAmaranthusMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange1(int range) {
         return ConfigFile.jadedAmaranthusRange;
     }
@@ -47,8 +45,7 @@ public class JadedAmaranthusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 4),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")))
     private int configureRange2(int original) {
         return ConfigFile.jadedAmaranthusRange;
     }
@@ -56,8 +53,7 @@ public class JadedAmaranthusMixin {
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/RandomSource;nextInt(I)I"),
     slice = @Slice(
             from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getMana()I"),
-            to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+            to = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;")))
     private int configureRange3(RandomSource instance, int i) {
         return instance.nextInt(ConfigFile.jadedAmaranthusRange * 2 + 1);
     }
@@ -65,8 +61,7 @@ public class JadedAmaranthusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 8),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;above()Lnet/minecraft/core/BlockPos;"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/DyeColor;byId(I)Lnet/minecraft/world/item/DyeColor;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/DyeColor;byId(I)Lnet/minecraft/world/item/DyeColor;")))
     private int configureRange4(int original) {
         return ConfigFile.jadedAmaranthusRange * 2;
     }
@@ -74,8 +69,7 @@ public class JadedAmaranthusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 30),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getLevel()Lnet/minecraft/world/level/Level;"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getMana()I")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/JadedAmaranthusBlockEntity;getMana()I")))
     private int configureDelay(int original) {
         return ConfigFile.jadedAmaranthusDelay;
     }

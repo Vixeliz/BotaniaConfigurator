@@ -39,14 +39,14 @@ public class RannucarpusMixin {
         return ConfigFile.rannucarpusPlacementRangeY;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0))
     private BlockPos configurePickupRange1(BlockPos instance, int dx, int dy, int dz) {
         final int RANGEXZ = ConfigFile.rannucarpusPickupRangeXZ;
         final int RANGEY = ConfigFile.rannucarpusPickupRangeY;
         return instance.offset(-RANGEXZ, -RANGEY, -RANGEXZ);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos configurePickupRange2(BlockPos instance, int dx, int dy, int dz) {
         final int RANGEXZ = ConfigFile.rannucarpusPickupRangeXZ;
         final int RANGEY = ConfigFile.rannucarpusPickupRangeY;
@@ -56,24 +56,22 @@ public class RannucarpusMixin {
     @ModifyConstant(method = "tickFlower",constant = @Constant(intValue = 10),
             slice = @Slice(
                     from = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getLevel()Lnet/minecraft/world/level/Level;", ordinal = 0),
-                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getLevel()Lnet/minecraft/world/level/Level;", ordinal = 1)),
-            remap = false)
+                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getLevel()Lnet/minecraft/world/level/Level;", ordinal = 1)))
     private int configureDelay(int original){
         return ConfigFile.rannucarpusDelay;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getMana()I"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;getMana()I"))
     private int configureCost1(RannuncarpusBlockEntity instance) {
         return instance.getMana() + 1 - ConfigFile.rannucarpusManaCost;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/RannuncarpusBlockEntity;addMana(I)V"))
     private void configureCost2(RannuncarpusBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.rannucarpusManaCost);
     }
 
-    @ModifyConstant(method = "getSecondaryRadius",constant = @Constant(intValue = 2),
-            remap = false)
+    @ModifyConstant(method = "getSecondaryRadius",constant = @Constant(intValue = 2), remap = false)
     private int configurePickupRange3(int original){
         return -ConfigFile.rannucarpusPickupRangeXZ;
     }

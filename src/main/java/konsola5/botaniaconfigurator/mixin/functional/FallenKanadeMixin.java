@@ -21,8 +21,7 @@ public class FallenKanadeMixin {
     @ModifyConstant(method = "tickFlower",constant = @Constant(intValue = 120),
             slice = @Slice(
                     from = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/FallenKanadeBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE",target = "Lnet/minecraft/world/entity/LivingEntity;addEffect(Lnet/minecraft/world/effect/MobEffectInstance;)Z")),
-            remap = false)
+                    to = @At(value = "INVOKE",target = "Lnet/minecraft/world/entity/LivingEntity;addEffect(Lnet/minecraft/world/effect/MobEffectInstance;)Z")))
     private int configureCost1(int original){
         return ConfigFile.fallenKanadeManaCost;
     }
@@ -30,8 +29,7 @@ public class FallenKanadeMixin {
     @ModifyConstant(method = "tickFlower",constant = @Constant(intValue = -120),
             slice = @Slice(
                     from = @At(value = "INVOKE",target = "Lnet/minecraft/world/entity/LivingEntity;addEffect(Lnet/minecraft/world/effect/MobEffectInstance;)Z"),
-                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/FallenKanadeBlockEntity;addMana(I)V")),
-            remap = false)
+                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/FallenKanadeBlockEntity;addMana(I)V")))
     private int configureCost2(int original){
         return -ConfigFile.fallenKanadeManaCost;
     }
@@ -39,7 +37,7 @@ public class FallenKanadeMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange(int range) {
         return ConfigFile.fallenKanadeRange;
     }

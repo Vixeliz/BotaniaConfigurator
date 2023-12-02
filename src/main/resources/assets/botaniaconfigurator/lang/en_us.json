@@ -1,5 +1,5 @@
 {
-  "botaniaconfigurator.midnightconfig.title": "Botania Configurator - Restart Minecraft after changing values!",
+  "botaniaconfigurator.midnightconfig.title": "Botania Configurator",
   "botaniaconfigurator.midnightconfig.category.generating": "Generating Flora",
 
   "botaniaconfigurator.midnightconfig.dandelifeon": "Dandelifeon",
@@ -15,9 +15,74 @@
 
   "botaniaconfigurator.midnightconfig.entropinnyum": "Entropinnyum",
   "botaniaconfigurator.midnightconfig.entropinnyumManaCapacity": "Entropinnyum Mana Capacity",
-  "botaniaconfigurator.midnightconfig.entropinnyumManaGenerationRate": "Entropinnyum Mana Generation Rate",
-  "botaniaconfigurator.midnightconfig.entropinnyumDupedTNTGenerationRate": "Entropinnyum Mana Generation Rate with duped TNT",
+  "botaniaconfigurator.midnightconfig.entropinnyumManaGenerationRate": "Entropinnyum Mana per TNT",
+  "botaniaconfigurator.midnightconfig.entropinnyumDupedTNTGenerationRate": "Entropinnyum Mana per duped TNT",
   "botaniaconfigurator.midnightconfig.entropinnyumRange": "Entropinnyum Range",
+
+  "botaniaconfigurator.midnightconfig.gourmaryllis": "Gourmaryllis",
+  "botaniaconfigurator.midnightconfig.gourmaryllisManaCapacity": "Gourmaryllis Mana Capacity (if higher than maximum possible Mana production)",
+  "botaniaconfigurator.midnightconfig.gourmaryllisFoodCooldownFactor": "Gourmaryllis Food Cooldown Factor",
+  "botaniaconfigurator.midnightconfig.gourmaryllisFoodManaFactor": "Gourmaryllis Food Mana Production Factor",
+  "botaniaconfigurator.midnightconfig.gourmaryllisStreakMultipliers": "Gourmaryllis Food Variety Streak Mana Production Multipliers (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.gourmaryllisMaxFoodValue": "Gourmaryllis Max Food Value (in hunger points)",
+  "botaniaconfigurator.midnightconfig.gourmaryllisRange": "Gourmaryllis Range",
+
+  "botaniaconfigurator.midnightconfig.hydroangeas": "Hydroangeas",
+  "botaniaconfigurator.midnightconfig.hydroangeasManaCapacity": "Hydroangeas Mana Capacity",
+  "botaniaconfigurator.midnightconfig.hydroangeasBurnTime": "Hydroangeas Fuel Burn Time",
+  "botaniaconfigurator.midnightconfig.hydroangeasManaGenerationRate": "Hydroangeas Mana per [delay] ticks",
+  "botaniaconfigurator.midnightconfig.hydroangeasDelay": "Hydroangeas Delay",
+  "botaniaconfigurator.midnightconfig.hydroangeasDelayRain": "Hydroangeas Delay while Raining",
+  "botaniaconfigurator.midnightconfig.hydroangeasDecayTime": "Hydroangeas Decay Time",
+  "botaniaconfigurator.midnightconfig.hydroangeasDecays": "Hydroangeas decays",
+
+  "botaniaconfigurator.midnightconfig.kekimurus": "Kekimurus",
+  "botaniaconfigurator.midnightconfig.kekimurusManaCapacity": "Kekimurus Mana Capacity",
+  "botaniaconfigurator.midnightconfig.kekimurusManaGenerationRate": "Kekimurus Mana per bite",
+  "botaniaconfigurator.midnightconfig.kekimurusDelay": "Kekimurus Delay",
+  "botaniaconfigurator.midnightconfig.kekimurusRange": "Kekimurus Range",
+
+  "botaniaconfigurator.midnightconfig.munchdew": "Munchdew",
+  "botaniaconfigurator.midnightconfig.munchdewManaCapacity": "Munchdew Mana Capacity",
+  "botaniaconfigurator.midnightconfig.munchdewManaGenerationRate": "Munchdew Mana per leaf eaten",
+  "botaniaconfigurator.midnightconfig.munchdewDelay": "Munchdew Delay between eating Leaves",
+  "botaniaconfigurator.midnightconfig.munchdewCooldown": "Munchdew Cooldown",
+  "botaniaconfigurator.midnightconfig.munchdewRangeXZ": "Munchdew Horizontal Range",
+  "botaniaconfigurator.midnightconfig.munchdewRangeY": "Munchdew Vertical Range",
+
+  "botaniaconfigurator.midnightconfig.narslimmus": "Narslimmus",
+  "botaniaconfigurator.midnightconfig.narslimmusManaCapacity": "Narslimmus Mana Capacity §o§7(GoG default: 4800)§r",
+  "botaniaconfigurator.midnightconfig.narslimmusBaseManaGenerationRate": "Narslimmus Base Mana per size 1 Slime eaten §o§7(GoG default: 300)§r",
+  "botaniaconfigurator.midnightconfig.narslimmusRange": "Narslimmus Range",
+
+  "botaniaconfigurator.midnightconfig.rafflowsia": "Rafflowsia",
+  "botaniaconfigurator.midnightconfig.rafflowsiaManaCapacity": "Rafflowsia Mana Capacity",
+  "botaniaconfigurator.midnightconfig.rafflowsiaStreakOutputs": "Rafflowsia Flower Variety Streak Mana Outputs (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.rafflowsiaRange": "Rafflowsia Range",
+
+  "botaniaconfigurator.midnightconfig.rosaArcana": "Rosa Arcana",
+  "botaniaconfigurator.midnightconfig.rosaArcanaManaCapacity": "Rosa Arcana Mana Capacity",
+  "botaniaconfigurator.midnightconfig.rosaArcanaManaGenerationRate": "Rosa Arcana Mana per XP point",
+  "botaniaconfigurator.midnightconfig.rosaArcanaRange": "Rosa Arcana Range",
+
+  "botaniaconfigurator.midnightconfig.shulkMeNot": "Shulk Me Not",
+  "botaniaconfigurator.midnightconfig.shulkMeNotManaCapacity": "Shulk Me Not Mana Capacity",
+  "botaniaconfigurator.midnightconfig.shulkMeNotManaGenerationRate": "Shulk Me Not Mana per Shulker attacking a monster",
+  "botaniaconfigurator.midnightconfig.shulkMeNotRadius": "Shulk Me Not Radius",
+
+  "botaniaconfigurator.midnightconfig.spectrolus": "Spectrolus",
+  "botaniaconfigurator.midnightconfig.spectrolusManaCapacity": "Spectrolus Mana Capacity",
+  "botaniaconfigurator.midnightconfig.spectrolusManaPerWool": "Spectrolus Mana per Wool",
+  "botaniaconfigurator.midnightconfig.spectrolusManaPerSheep": "Spectrolus Mana per Sheep",
+  "botaniaconfigurator.midnightconfig.spectrolusManaPerBabySheep": "Spectrolus Mana per Baby Sheep §o§7(you monster)§r",
+  "botaniaconfigurator.midnightconfig.spectrolusRange": "Spectrolus Range",
+
+  "botaniaconfigurator.midnightconfig.thermalily": "Thermalily",
+  "botaniaconfigurator.midnightconfig.thermalilyManaCapacity": "Thermalily Mana Capacity",
+  "botaniaconfigurator.midnightconfig.thermalilyBurnTime": "Thermalily Fuel Burn Time",
+  "botaniaconfigurator.midnightconfig.thermalilyManaGenerationRate": "Thermalily Mana Generation Rate",
+  "botaniaconfigurator.midnightconfig.thermalilyCooldownFactor": "Thermalily Cooldown Factor",
+  "botaniaconfigurator.midnightconfig.thermalilyCooldownRolls": "Thermalily Cooldown rolls (§e⚠ Requires restart!§r) (§e⚠ Must be 15 entries long!§r)",
 
   "botaniaconfigurator.midnightconfig.category.functional": "Functional Flora",
 
@@ -125,8 +190,8 @@
 
   "botaniaconfigurator.midnightconfig.orechid": "Orechid",
   "botaniaconfigurator.midnightconfig.orechidManaCapacity": "Orechid Mana Capacity",
-  "botaniaconfigurator.midnightconfig.orechidManaCost": "Orechid Mana Cost (per transformed block)",
-  "botaniaconfigurator.midnightconfig.orechidDelay": "Orechid Delay",
+  "botaniaconfigurator.midnightconfig.orechidManaCost": "Orechid Mana Cost (per transformed block) §o§7(GoG default: 700)§r ",
+  "botaniaconfigurator.midnightconfig.orechidDelay": "Orechid Delay §o§7(GoG default: 2)§r",
   "botaniaconfigurator.midnightconfig.orechidRangeXZ": "Orechid Horizontal Range",
   "botaniaconfigurator.midnightconfig.orechidRangeY": "Orechid Vertical Range",
 
@@ -180,7 +245,7 @@
   "botaniaconfigurator.midnightconfig.tigerseyeRangeY": "Tigerseye Vertical Range",
 
   "botaniaconfigurator.midnightconfig.vinculotus": "Vinculotus",
-  "botaniaconfigurator.midnightconfig.vinculotusManaCapacity": "Vinculotus Mana Capactity",
+  "botaniaconfigurator.midnightconfig.vinculotusManaCapacity": "Vinculotus Mana Capacity",
   "botaniaconfigurator.midnightconfig.vinculotusManaCost": "Vinculotus Mana Cost (per teleported Enderman)",
   "botaniaconfigurator.midnightconfig.vinculotusRadius": "Vinculotus Radius"
 }

@@ -15,8 +15,7 @@ public class BergamuteMixin {
     // If Botania for some reason changes the RANGE, check this. Originally, RANGE = 4.
     @ModifyConstant(method = "getBergamutesNearby", constant = @Constant(doubleValue = 16.0), // RANGE * RANGE
             slice = @Slice(
-                    from = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;distToCenterSqr(DDD)D")),
-            remap = false)
+                    from = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;distToCenterSqr(DDD)D")))
     private static double configRadius2(double constant) {
         return Math.pow(ConfigFile.bergamuteRadius, 2);
     }

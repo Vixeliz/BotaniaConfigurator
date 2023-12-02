@@ -36,7 +36,7 @@ public class TangleberrieMixin {
         return ConfigFile.tangleberrieMaxDistance;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/TangleberrieBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/TangleberrieBlockEntity;addMana(I)V"))
     private void configureCost(TangleberrieBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.tangleberrieManaCost);
     }

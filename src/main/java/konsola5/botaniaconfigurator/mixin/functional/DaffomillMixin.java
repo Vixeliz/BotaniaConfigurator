@@ -19,23 +19,22 @@ public class DaffomillMixin {
 
     @ModifyConstant(method = "tickFlower", constant = @Constant(doubleValue = 0.05),
             slice = @Slice(
-                    from = @At(value = "INVOKE", target = "Lvazkii/botania/common/helper/DelayHelper;canInteractWithImmediate(Lvazkii/botania/api/block_entity/SpecialFlowerBlockEntity;Lnet/minecraft/world/entity/item/ItemEntity;)Z")),
-            remap = false)
+                    from = @At(value = "INVOKE", target = "Lvazkii/botania/common/helper/DelayHelper;canInteractWithImmediate(Lvazkii/botania/api/block_entity/SpecialFlowerBlockEntity;Lnet/minecraft/world/entity/item/ItemEntity;)Z")))
     private double configureStrength(double original) {
         return ConfigFile.daffomillStrength;
     }
 
-    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 3, remap = false)
+    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 3)
     private int configureWidth(int w) {
         return ConfigFile.daffomillWidth;
     }
 
-    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 4, remap = false)
+    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 4)
     private int configureHeight(int h) {
         return ConfigFile.daffomillHeight;
     }
 
-    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 5, remap = false)
+    @ModifyVariable(method = "aabbForOrientation", at = @At("STORE"), ordinal = 5)
     private int configureLength(int l) {
         return ConfigFile.daffomillLength;
     }

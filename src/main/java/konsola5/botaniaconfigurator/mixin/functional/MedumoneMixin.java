@@ -18,28 +18,28 @@ public class MedumoneMixin {
         return ConfigFile.medumoneManaCapacity;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;getMana()I", ordinal = 0), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;getMana()I", ordinal = 0))
     public int modifyCost1(MedumoneBlockEntity instance) {
         return instance.getMana() - ConfigFile.medumoneManaCost;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;addMana(I)V"))
     public void modifyCost2(MedumoneBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.medumoneManaCost);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;getMana()I", ordinal = 1), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/MedumoneBlockEntity;getMana()I", ordinal = 1))
     public int modifyCost3(MedumoneBlockEntity instance) {
         return instance.getMana() < ConfigFile.medumoneManaCost ? 0 : instance.getMana();
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0))
     private BlockPos configureRange1(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.medumoneRange;
         return instance.offset(-RANGE, -RANGE, -RANGE);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos configureRange2(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.medumoneRange;
         return instance.offset(RANGE + 1, RANGE + 1, RANGE + 1);
@@ -48,7 +48,7 @@ public class MedumoneMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange3(int range) {
         return ConfigFile.medumoneRange;
     }

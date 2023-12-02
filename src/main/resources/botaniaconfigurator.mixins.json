@@ -14,6 +14,7 @@
     "functional.ClayconiaMiniMixin",
     "functional.ClayconiaMixin",
     "functional.DaffomillMixin",
+    "functional.DreadthorneMixin",
     "functional.ExoflameMixin",
     "functional.FallenKanadeMixin",
     "functional.HeiseiDreamMixin",
@@ -43,7 +44,16 @@
     "generators.DandelifeonMixin",
     "generators.EndoflameMixin",
     "generators.EntropinnyumMixin",
-    "generators.GourmaryllisMixin"
+    "generators.GourmaryllisMixin",
+    "generators.HydroangeasMixin",
+    "generators.KekimurusMixin",
+    "generators.MunchdewMixin",
+    "generators.NarslimmusMixin",
+    "generators.RafflowsiaMixin",
+    "generators.RosaArcanaMixin",
+    "generators.ShulkMeNotMixin",
+    "generators.SpectrolusMixin",
+    "generators.ThermalilyMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -21,8 +21,7 @@ public class ClayconiaMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 80),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;getCoordsToPut()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;getCoordsToPut()Lnet/minecraft/core/BlockPos;")))
     private int configureCost1(int original) {
         return ConfigFile.clayconiaManaCost;
     }
@@ -30,21 +29,26 @@ public class ClayconiaMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -80),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addFreshEntity(Lnet/minecraft/world/entity/Entity;)Z"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;addMana(I)V")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/ClayconiaBlockEntity;addMana(I)V")))
     private int configureCost2(int original) {
         return -ConfigFile.clayconiaManaCost;
     }
 
-    @Inject(method = "getRange",
-            at = @At("HEAD"),remap = false,cancellable = true)
-    private void configureRangeXZ(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.clayconiaRangeXZ);
+    /**
+     * @author KonSola5
+     * @reason Make Clayconia Horizontal Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getRange() {
+        return ConfigFile.clayconiaRangeXZ;
     }
 
-    @Inject(method = "getRangeY",
-            at = @At("HEAD"),remap = false,cancellable = true)
-    private void configureRangeY(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.clayconiaRangeY);
+    /**
+     * @author KonSola5
+     * @reason Make Clayconia Vertical Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getRangeY() {
+        return ConfigFile.clayconiaRangeY;
     }
 }

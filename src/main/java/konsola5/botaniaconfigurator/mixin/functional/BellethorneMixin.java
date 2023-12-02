@@ -19,13 +19,21 @@ public class BellethorneMixin {
         return ConfigFile.bellethorneManaCapacity;
     }
 
-    @Inject(method = "getManaCost",at = @At("RETURN"),remap = false,cancellable = true)
-    private void configManaCost(CallbackInfoReturnable<Integer> cir){
-        cir.setReturnValue(ConfigFile.bellethorneManaCost);
+    /**
+     * @author KonSola5
+     * @reason Make Bellethorne Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getManaCost() {
+        return ConfigFile.bellethorneManaCost;
     }
 
-    @Inject(method = "getRange",at = @At("RETURN"),remap = false,cancellable = true)
-    private void configRange(CallbackInfoReturnable<Integer> cir){
-        cir.setReturnValue(ConfigFile.bellethorneRange);
+    /**
+     * @author KonSola5
+     * @reason Make Bellethorne Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getRange() {
+        return ConfigFile.bellethorneRange;
     }
 }

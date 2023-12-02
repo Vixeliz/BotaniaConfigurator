@@ -22,8 +22,7 @@ public class BubbellMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 4),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")))
     private int configureCost1(int original) {
         return ConfigFile.bubbellManaCost;
     }
@@ -31,19 +30,22 @@ public class BubbellMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -4),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/BubbellBlockEntity;addMana(I)V")))
     private int configureCost2(int original) {
         return -ConfigFile.bubbellManaCost;
     }
 
-    @ModifyConstant(method = "isValidBubbell",constant = @Constant(intValue = 4),remap = false)
+    @ModifyConstant(method = "isValidBubbell",constant = @Constant(intValue = 4))
     private static int configureCost3(int original) {
         return ConfigFile.bubbellManaCost;
     }
 
-    @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
-    private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(ConfigFile.bubbellRange);
+    /**
+     * @author KonSola5
+     * @reason Make Bubbell Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getRange() {
+        return ConfigFile.bubbellRange;
     }
 }

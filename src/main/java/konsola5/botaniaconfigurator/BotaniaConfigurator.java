@@ -13,7 +13,8 @@ public class BotaniaConfigurator implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		MidnightConfig.init("botaniaconfigurator", ConfigFile.class);
-		LOGGER.info("Unharcoding Botania by leeching into literally every Botania flower.");
+		MidnightConfig.init(MOD_ID, ConfigFile.class);
+		MidnightConfig.write(MOD_ID);
+		LOGGER.info("Unharcoding Botania by leeching into most of the Botania's flowers.");
 	}
 }

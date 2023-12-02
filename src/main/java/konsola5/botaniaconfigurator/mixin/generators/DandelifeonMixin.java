@@ -24,8 +24,7 @@ public class DandelifeonMixin {
 
     @ModifyConstant(method = "setBlockForGeneration",constant = @Constant(intValue = 60),
             slice = @Slice(
-                    to = @At(value = "INVOKE",target = "Lnet/minecraft/world/level/Level;removeBlock(Lnet/minecraft/core/BlockPos;Z)Z")),
-            remap = false)
+                    to = @At(value = "INVOKE",target = "Lnet/minecraft/world/level/Level;removeBlock(Lnet/minecraft/core/BlockPos;Z)Z")))
     private static int configureGenerationRate(int constant){
         return ConfigFile.dandelifeonManaPerGeneration;
     }
@@ -33,8 +32,7 @@ public class DandelifeonMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(longValue = 10),
             slice = @Slice(
                     from = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/generating/DandelifeonBlockEntity;getLevel()Lnet/minecraft/world/level/Level;", ordinal = 0),
-                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/generating/DandelifeonBlockEntity;getBlockPos()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+                    to = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/generating/DandelifeonBlockEntity;getBlockPos()Lnet/minecraft/core/BlockPos;")))
     private static long configureSpeed(long constant){
         return ConfigFile.dandelifeonDelay;
     }

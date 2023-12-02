@@ -22,23 +22,22 @@ public class LabelliaMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 500),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;getEffectivePos()Lnet/minecraft/core/BlockPos;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;getEffectivePos()Lnet/minecraft/core/BlockPos;")))
     private int configureCost1(int original) {
         return ConfigFile.labelliaManaCost;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/LabelliaBlockEntity;addMana(I)V"))
     private void configureCost2(LabelliaBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.labelliaManaCost);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0))
     private BlockPos configurePickupRange1(BlockPos instance, int dx, int dy, int dz) {
         return instance.offset(-ConfigFile.labelliaPickupRange, 0, -ConfigFile.labelliaPickupRange);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos configurePickupRange2(BlockPos instance, int dx, int dy, int dz) {
         return instance.offset(ConfigFile.labelliaPickupRange + 1, 1, ConfigFile.labelliaPickupRange + 1);
     }
@@ -46,7 +45,7 @@ public class LabelliaMixin {
     @ModifyArgs(method = "tickFlower", at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/world/phys/AABB;<init>(DDDDDD)V"
-    ), remap = false)
+    ))
     private void configureRenameRange1(Args args) {
         final int RENAME_RANGE = 2;
         double x1 = args.get(0);
@@ -66,7 +65,7 @@ public class LabelliaMixin {
     @ModifyArg(method = "getSecondaryRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configurePickupRange3(int range) {
         return ConfigFile.labelliaPickupRange;
     }
@@ -74,7 +73,7 @@ public class LabelliaMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRenameRange2(int range) {
         return ConfigFile.labelliaRenameRange;
     }

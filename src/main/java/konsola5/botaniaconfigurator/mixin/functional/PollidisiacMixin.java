@@ -20,36 +20,35 @@ public class PollidisiacMixin {
 
     @ModifyConstant(method = "tickFlower",constant = @Constant(intValue = 12),
             slice = @Slice(
-                    from = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;getMana()I")),
-            remap = false)
+                    from = @At(value = "INVOKE",target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;getMana()I")))
     private int configureCost1(int original){
         return ConfigFile.pollidisiacManaCost;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;addMana(I)V"))
     public void modifyCost2(PollidisiacBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.pollidisiacManaCost);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 0))
     private BlockPos configureRange1(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.offset(-RANGE, -RANGE, -RANGE);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos configureRange2(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.offset(RANGE + 1, RANGE + 1, RANGE + 1);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 2), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 2))
     private BlockPos configureRange3(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.offset(-RANGE, -RANGE, -RANGE);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 3), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 3))
     private BlockPos configureRange4(BlockPos instance, int dx, int dy, int dz) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.offset(RANGE + 1, RANGE + 1, RANGE + 1);
@@ -58,7 +57,7 @@ public class PollidisiacMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange5(int range) {
         return ConfigFile.pollidisiacRange;
     }
@@ -66,7 +65,7 @@ public class PollidisiacMixin {
     @ModifyArg(method = "getSecondaryRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange6(int range) {
         return ConfigFile.pollidisiacRange;
     }

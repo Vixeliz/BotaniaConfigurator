@@ -21,8 +21,7 @@ public class HyacidusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 20),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HyacidusBlockEntity;getMana()I"),
-                    to = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getMobType()Lnet/minecraft/world/entity/MobType;")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getMobType()Lnet/minecraft/world/entity/MobType;")))
     private int configureCost1(int original) {
         return ConfigFile.hyacidusManaCost;
     }
@@ -30,18 +29,17 @@ public class HyacidusMixin {
     @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -20),
             slice = @Slice(
                     from = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;addEffect(Lnet/minecraft/world/effect/MobEffectInstance;)Z"),
-                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HyacidusBlockEntity;addMana(I)V")),
-            remap = false)
+                    to = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HyacidusBlockEntity;addMana(I)V")))
     private int configureCost2(int original) {
         return -ConfigFile.hyacidusManaCost;
     }
 
-    @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = -6), remap = false)
+    @ModifyConstant(method = "tickFlower", remap = false, constant = @Constant(intValue = -6))
     private int configureRange1(int original) {
         return -ConfigFile.hyacidusRange;
     }
 
-    @ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 7), remap = false)
+    @ModifyConstant(method = "tickFlower", remap = false, constant = @Constant(intValue = 7))
     private int configureRange2(int original) {
         return ConfigFile.hyacidusRange + 1;
     }
@@ -49,7 +47,7 @@ public class HyacidusMixin {
     @ModifyArg(method = "getRadius", at = @At(
             value = "INVOKE",
             target = "Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;square(Lnet/minecraft/core/BlockPos;I)Lvazkii/botania/api/block_entity/RadiusDescriptor$Rectangle;"
-    ), index = 1, remap = false)
+    ), index = 1)
     private int configureRange3(int range) {
         return ConfigFile.hyacidusRange;
     }

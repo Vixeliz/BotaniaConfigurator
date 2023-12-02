@@ -18,20 +18,24 @@ public class HopperhockMixin {
         return ConfigFile.hopperhockManaCapacity;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HopperhockBlockEntity;getMana()I"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HopperhockBlockEntity;getMana()I"))
     public int modifyCost1(HopperhockBlockEntity instance) {
         return instance.getMana() - ConfigFile.hopperhockManaCostPerPull;
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HopperhockBlockEntity;addMana(I)V"), remap = false)
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/HopperhockBlockEntity;addMana(I)V"))
     public void modifyCost2(HopperhockBlockEntity instance, int mana) {
         instance.addMana(-ConfigFile.hopperhockManaCostPerPull);
     }
 
-    @Inject(method = "getRange", at = @At("RETURN"), remap = false, cancellable = true)
-    private void configRange(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(((HopperhockBlockEntity)(Object)this).getMana() > ConfigFile.hopperhockManaCostPerPull - 1 ?
+    /**
+     * @author KonSola5
+     * @reason Make Hopperhock Range modifiable.
+     */
+    @Overwrite(remap = false)
+    public int getRange() {
+        return ((HopperhockBlockEntity)(Object)this).getMana() > ConfigFile.hopperhockManaCostPerPull - 1 ?
                 ConfigFile.hopperhockRangeMana :
-                ConfigFile.hopperhockRange);
+                ConfigFile.hopperhockRange;
     }
 }
