@@ -55,7 +55,23 @@ repositories {
 		url = "https://api.modrinth.com/maven"
 	}
 	maven {
+		name = "CurseMaven"
 		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		url "https://cursemaven.com"
+	}
+	maven {
+		name "SquidDev"
+		url "https://squiddev.cc/maven"
+	}
+	maven { url "https://maven.terraformersmc.com/releases" }
+	maven {
+		name = "Modmuss50"
+		url = "https://maven.modmuss50.me/"
 	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
@@ -70,6 +86,7 @@ dependencies {
 	mappings loom.layered() {
 		officialMojangMappings()
 		parchment("org.parchmentmc.data:parchment-1.19.3:2023.03.12@zip") // Don't know why Botania uses 1.19.3 parchment data, but ditto.
+		//mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
@@ -82,6 +99,15 @@ dependencies {
 		modImplementation("com.terraformersmc:modmenu:7.2.2")
 
 		modImplementation(include("maven.modrinth:midnightlib:${project.midnightlib_version}"))
+
+		modImplementation 'teamreborn:energy:3.0.0'
+
+//		modRuntimeOnly 'RebornCore:RebornCore-1.20.1:5.8.7'
+//		modRuntimeOnly 'TechReborn:TechReborn-1.20.1:5.8.7'
+
+		modRuntimeOnly 'curse.maven:reborncore-237903:4708961'
+
+		modRuntimeOnly 'curse.maven:techreborn-233564:4708962'
 	}
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

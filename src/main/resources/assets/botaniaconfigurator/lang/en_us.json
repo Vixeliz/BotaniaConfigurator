@@ -96,6 +96,8 @@
   "botaniaconfigurator.midnightconfig.spectrolusManaPerSheep": "Spectrolus Mana per Sheep",
   "botaniaconfigurator.midnightconfig.spectrolusManaPerBabySheep": "Spectrolus Mana per Baby Sheep §o§7(you monster)§r",
   "botaniaconfigurator.midnightconfig.spectrolusRange": "Spectrolus Range",
+  "botaniaconfigurator.midnightconfig.spectrolusRandomStartingColor": "Spectrolus starts with a random color",
+  "botaniaconfigurator.midnightconfig.spectrolusRandomStartingColor.tooltip": "If this config option is set to true, Spectrolus will start out with a random color. If false, it will always start from White.",
   "botaniaconfigurator.midnightconfig.spectrolusDecayTime": "Spectrolus Decay Time",
   "botaniaconfigurator.midnightconfig.spectrolusDecays": "Spectrolus decays",
 
@@ -274,5 +276,16 @@
   "botaniaconfigurator.midnightconfig.vinculotus": "Vinculotus",
   "botaniaconfigurator.midnightconfig.vinculotusManaCapacity": "Vinculotus Mana Capacity",
   "botaniaconfigurator.midnightconfig.vinculotusManaCost": "Vinculotus Mana Cost (per teleported Enderman)",
-  "botaniaconfigurator.midnightconfig.vinculotusRadius": "Vinculotus Radius"
+  "botaniaconfigurator.midnightconfig.vinculotusRadius": "Vinculotus Radius",
+
+  "botaniaconfigurator.midnightconfig.category.misc": "Miscellaneous",
+  "botaniaconfigurator.midnightconfig.manaFluxfield": "Mana Fluxfield",
+  "botaniaconfigurator.midnightconfig.manaFluxfieldCapacity": "Mana Fluxfield Energy capacity",
+  "botaniaconfigurator.midnightconfig.manaFluxfieldRatio": "Mana Fluxfield Mana to Energy ratio",
+
+  "botaniaconfigurator.midnightconfig.manaPools": "Mana Pools",
+  "botaniaconfigurator.midnightconfig.dilutedManaPoolCapacity": "Diluted Mana Pool capacity §o§7(affects newly placed pools)§r",
+  "botaniaconfigurator.midnightconfig.manaPoolCapacity": "Mana Pool capacity §o§7(affects newly placed pools)§r",
+  "botaniaconfigurator.midnightconfig.fabulousManaPoolCapacity": "Fabulous Mana Pool capacity §o§7(affects newly placed pools)§r",
+  "botaniaconfigurator.midnightconfig.guiltyPoolCapacity": "The Everlasting Guilty Pool capacity §o§7(affects newly placed pools)§r"
 }

@@ -2,26 +2,45 @@ package konsola5.botaniaconfigurator.mixin.generators;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.block.flower.generating.SpectrolusBlockEntity;
 
 import java.util.Objects;
+import java.util.Random;
 
 @Mixin(SpectrolusBlockEntity.class)
-public class SpectrolusMixin {
+public abstract class SpectrolusMixin extends GeneratingFlowerBlockEntity {
+    Random random = new Random();
+
+    // getLevel() is null here, so the world's random can't be used here...
+
+    @SuppressWarnings("unused") // This is only to give the field a different init value.
+    @Shadow(remap = false) private DyeColor nextColor = ConfigFile.spectrolusRandomStartingColor ?
+            DyeColor.values()[random.nextInt(16)] :
+            DyeColor.WHITE;
     private int passiveDecayTicks;
+
+    public SpectrolusMixin(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
+    }
+
     @Inject(method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/block_entity/GeneratingFlowerBlockEntity;tickFlower()V", shift = At.Shift.AFTER), cancellable = true, remap = false)
     private void decayFlower(CallbackInfo ci) {
         if (ConfigFile.spectrolusDecays) {
-            if (!Objects.requireNonNull(((SpectrolusBlockEntity) (Object) this).getLevel()).isClientSide) {
+            if (!Objects.requireNonNull(getLevel()).isClientSide) {
                 if (++passiveDecayTicks > ConfigFile.spectrolusDecayTime) {
-                    ((SpectrolusBlockEntity) (Object) this).getLevel().destroyBlock(((SpectrolusBlockEntity) (Object) this).getBlockPos(), false);
-                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(((SpectrolusBlockEntity) (Object) this).getLevel(), ((SpectrolusBlockEntity) (Object) this).getBlockPos())) {
-                        ((SpectrolusBlockEntity) (Object) this).getLevel().setBlockAndUpdate(((SpectrolusBlockEntity) (Object) this).getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
+                    getLevel().destroyBlock(getBlockPos(), false);
+                    if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(getLevel(), getBlockPos())) {
+                        getLevel().setBlockAndUpdate(getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());
                     }
                     ci.cancel();
                 }

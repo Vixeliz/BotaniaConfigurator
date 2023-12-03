@@ -52,7 +52,10 @@
     "generators.RosaArcanaMixin",
     "generators.ShulkMeNotMixin",
     "generators.SpectrolusMixin",
-    "generators.ThermalilyMixin"
+    "generators.ThermalilyMixin",
+    "misc.FluxfieldMixin",
+    "misc.FluxfieldTRStorageMixin",
+    "misc.ManaPoolMixin"
   ],
   "injectors": {
     "defaultRequire": 1

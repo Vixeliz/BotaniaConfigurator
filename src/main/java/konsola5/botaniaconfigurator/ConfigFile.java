@@ -8,6 +8,7 @@ import java.util.List;
 
 public class ConfigFile extends MidnightConfig {
 
+
     @SuppressWarnings("unused")
     @Comment(category = "generating", centered = true) public static Comment dandelifeon;
     @Entry(category = "generating", min = 1, max = Integer.MAX_VALUE) public static int dandelifeonManaCapacity = 50000;
@@ -137,6 +138,7 @@ public class ConfigFile extends MidnightConfig {
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusManaPerWool = 1200;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusManaPerSheep = 5000;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusManaPerBabySheep = 1;
+    @Entry(category = "generating") public static boolean spectrolusRandomStartingColor = false;
     @Entry(category = "generating", min = 0, max = 1000) public static int spectrolusRange = 1;
     @Entry(category = "generating", min = 0, max = Integer.MAX_VALUE) public static int spectrolusDecayTime = 72000;
     @Entry(category = "generating") public static boolean spectrolusDecays = false;
@@ -362,4 +364,19 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int vinculotusManaCapacity = 500;
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int vinculotusManaCost = 50;
         @Entry(category = "functional", min = 0, max = 100) public static double vinculotusRadius = 64;
+
+    // Other tweaks
+    @SuppressWarnings("unused")
+    @Comment(category = "misc", centered = true) public static Comment manaFluxfield;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static double manaFluxfieldRatio = 3;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static int manaFluxfieldCapacity = 3840;
+
+    @SuppressWarnings("unused")
+    @Comment(category = "misc", centered = true) public static Comment manaPools;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static int dilutedManaPoolCapacity = 10000;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static int manaPoolCapacity = 1000000;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static int fabulousManaPoolCapacity = 1000000;
+        @Entry(category = "misc", min = 0, max = Integer.MAX_VALUE) public static int guiltyPoolCapacity = 1000000;
+
+
 }
