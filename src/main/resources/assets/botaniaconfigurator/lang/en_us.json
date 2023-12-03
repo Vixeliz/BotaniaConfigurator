@@ -110,7 +110,7 @@
   "botaniaconfigurator.midnightconfig.thermalilyDecayTime": "Thermalily Decay Time",
   "botaniaconfigurator.midnightconfig.thermalilyDecays": "Thermalily decays",
 
-  "botaniaconfigurator.midnightconfig.category.functional": "Functional Flora",
+  "botaniaconfigurator.midnightconfig.category.functional": "Miscellaneous",
 
   "botaniaconfigurator.midnightconfig.agricarnation": "Agricarnation",
   "botaniaconfigurator.midnightconfig.agricarnationManaCapacity": "Agricarnation Mana Capacity",
@@ -278,7 +278,7 @@
   "botaniaconfigurator.midnightconfig.vinculotusManaCost": "Vinculotus Mana Cost (per teleported Enderman)",
   "botaniaconfigurator.midnightconfig.vinculotusRadius": "Vinculotus Radius",
 
-  "botaniaconfigurator.midnightconfig.category.misc": "Miscellaneous",
+  "botaniaconfigurator.midnightconfig.category.misc": "Functional Flora",
   "botaniaconfigurator.midnightconfig.manaFluxfield": "Mana Fluxfield",
   "botaniaconfigurator.midnightconfig.manaFluxfieldCapacity": "Mana Fluxfield Energy capacity",
   "botaniaconfigurator.midnightconfig.manaFluxfieldRatio": "Mana Fluxfield Mana to Energy ratio",
