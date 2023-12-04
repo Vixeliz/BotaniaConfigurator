@@ -116,13 +116,13 @@
   "botaniaconfigurator.midnightconfig.agricarnationManaCapacity": "Agricarnation Mana Capacity",
   "botaniaconfigurator.midnightconfig.agricarnationManaCost": "Agricarnation Mana Cost (per act)",
   "botaniaconfigurator.midnightconfig.agricarnationRange": "Agricarnation Range",
-  "botaniaconfigurator.midnightconfig.agricarnationRangeMini": "Agricarnation Petitie Range",
+  "botaniaconfigurator.midnightconfig.agricarnationRangeMini": "Agricarnation Petite Range",
 
   "botaniaconfigurator.midnightconfig.bellethorne": "Bellethorne",
   "botaniaconfigurator.midnightconfig.bellethorneManaCapacity": "Bellethorne Mana Capacity",
   "botaniaconfigurator.midnightconfig.bellethorneManaCost": "Bellethorne Mana Cost",
   "botaniaconfigurator.midnightconfig.bellethorneRange": "Bellethorne Range",
-  "botaniaconfigurator.midnightconfig.bellethorneRangeMini": "Bellethorne Petitie Range",
+  "botaniaconfigurator.midnightconfig.bellethorneRangeMini": "Bellethorne Petite Range",
 
   "botaniaconfigurator.midnightconfig.bergamute": "Bergamute",
   "botaniaconfigurator.midnightconfig.bergamuteRadius": "Bergamute Radius",
@@ -131,7 +131,7 @@
   "botaniaconfigurator.midnightconfig.bubbellManaCapacity": "Bubbell Mana Capacity",
   "botaniaconfigurator.midnightconfig.bubbellManaCost": "Bubbell Mana Cost",
   "botaniaconfigurator.midnightconfig.bubbellRange": "Bubbell Range",
-  "botaniaconfigurator.midnightconfig.bubbellRangeMini": "Bubbell Petitie Range",
+  "botaniaconfigurator.midnightconfig.bubbellRangeMini": "Bubbell Petite Range",
 
   "botaniaconfigurator.midnightconfig.clayconia": "Clayconia",
   "botaniaconfigurator.midnightconfig.clayconiaManaCapacity": "Clayconia Mana Capacity",
@@ -139,8 +139,8 @@
   "botaniaconfigurator.midnightconfig.clayconiaDelay": "Clayconia Delay",
   "botaniaconfigurator.midnightconfig.clayconiaRangeXZ": "Clayconia Horizontal Range",
   "botaniaconfigurator.midnightconfig.clayconiaRangeY": "Clayconia Vertical Range",
-  "botaniaconfigurator.midnightconfig.clayconiaRangeXZMini": "Clayconia Petitie Horizontal Range",
-  "botaniaconfigurator.midnightconfig.clayconiaRangeYMini": "Clayconia Petitie Vertical Range",
+  "botaniaconfigurator.midnightconfig.clayconiaRangeXZMini": "Clayconia Petite Horizontal Range",
+  "botaniaconfigurator.midnightconfig.clayconiaRangeYMini": "Clayconia Petite Vertical Range",
   "botaniaconfigurator.midnightconfig.clayconiaBuff": "Buffed Clayconia Mode",
   "botaniaconfigurator.midnightconfig.clayconiaBuff.tooltip": "When this config option is set to true, Clayconia will replace Sand blocks with Clay blocks instead of dropping Clay Balls.",
 
@@ -175,8 +175,8 @@
   "botaniaconfigurator.midnightconfig.hopperhockManaCapacity": "Hopperhock Mana Capacity",
   "botaniaconfigurator.midnightconfig.hopperhockRange": "Hopperhock Range",
   "botaniaconfigurator.midnightconfig.hopperhockRangeMana": "Hopperhock Range (with Mana)",
-  "botaniaconfigurator.midnightconfig.hopperhockRangeMini": "Hopperhock Petitie Range",
-  "botaniaconfigurator.midnightconfig.hopperhockRangeManaMini": "Hopperhock Petitie Range (with Mana)",
+  "botaniaconfigurator.midnightconfig.hopperhockRangeMini": "Hopperhock Petite Range",
+  "botaniaconfigurator.midnightconfig.hopperhockRangeManaMini": "Hopperhock Petite Range (with Mana)",
 
   "botaniaconfigurator.midnightconfig.hyacidus": "Hyacidus",
   "botaniaconfigurator.midnightconfig.hyacidusManaCapacity": "Hyacidus Mana Capacity",
@@ -191,7 +191,7 @@
 
   "botaniaconfigurator.midnightconfig.jiyuulia": "Jiyuulia",
   "botaniaconfigurator.midnightconfig.jiyuuliaRange": "Jiyuulia Range",
-  "botaniaconfigurator.midnightconfig.jiyuuliaRangeMini": "Jiyuulia Petitie Range",
+  "botaniaconfigurator.midnightconfig.jiyuuliaRangeMini": "Jiyuulia Petite Range",
 
   "botaniaconfigurator.midnightconfig.labellia": "Labellia",
   "botaniaconfigurator.midnightconfig.labelliaManaCapacity": "Labellia Mana Capacity",
@@ -209,8 +209,8 @@
   "botaniaconfigurator.midnightconfig.marimorphosisDelay": "Marimorphosis Delay",
   "botaniaconfigurator.midnightconfig.marimorphosisRangeXZ": "Marimorphosis Horizontal Range",
   "botaniaconfigurator.midnightconfig.marimorphosisRangeY": "Marimorphosis Vertical Range",
-  "botaniaconfigurator.midnightconfig.marimorphosisRangeXZMini": "Marimorphosis Petitie Horizontal Range",
-  "botaniaconfigurator.midnightconfig.marimorphosisRangeYMini": "Marimorphosis Petitie Vertical Range",
+  "botaniaconfigurator.midnightconfig.marimorphosisRangeXZMini": "Marimorphosis Petite Horizontal Range",
+  "botaniaconfigurator.midnightconfig.marimorphosisRangeYMini": "Marimorphosis Petite Vertical Range",
 
   "botaniaconfigurator.midnightconfig.medumone": "Medumone",
   "botaniaconfigurator.midnightconfig.medumoneManaCapacity": "Medumone Mana Capacity",
@@ -245,14 +245,14 @@
   "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZ": "Rannucarpus Horizontal Placement Range",
   "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZMana": "Rannucarpus Horizontal Placement Range (with Mana)",
   "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeY": "Rannucarpus Vertical Placement Range",
-  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZMini": "Rannucarpus Petitie Horizontal Placement Range",
-  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZManaMini": "Rannucarpus Petitie Horizontal Placement Range (with Mana)",
-  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeYMini": "Rannucarpus Petitie Vertical Placement Range",
+  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZMini": "Rannucarpus Petite Horizontal Placement Range",
+  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeXZManaMini": "Rannucarpus Petite Horizontal Placement Range (with Mana)",
+  "botaniaconfigurator.midnightconfig.rannucarpusPlacementRangeYMini": "Rannucarpus Petite Vertical Placement Range",
   "botaniaconfigurator.midnightconfig.rannucarpusDelay": "Rannucarpus Delay",
 
   "botaniaconfigurator.midnightconfig.solegnolia": "Solegnolia",
   "botaniaconfigurator.midnightconfig.solegnoliaRadius": "Solegnolia Radius",
-  "botaniaconfigurator.midnightconfig.solegnoliaRadiusMini": "Solegnolia Petitie Radius",
+  "botaniaconfigurator.midnightconfig.solegnoliaRadiusMini": "Solegnolia Petite Radius",
 
   "botaniaconfigurator.midnightconfig.spectrantheum": "Spectrantheum",
   "botaniaconfigurator.midnightconfig.spectrantheumManaCapacity": "Spectrantheum Mana Capacity",
@@ -264,8 +264,8 @@
   "botaniaconfigurator.midnightconfig.tangleberrieManaCost": "Tangleberrie Mana Cost",
   "botaniaconfigurator.midnightconfig.tangleberrieRange": "Tangleberrie Range",
   "botaniaconfigurator.midnightconfig.tangleberrieMaxDistance": "Tangleberrie Max Distance",
-  "botaniaconfigurator.midnightconfig.tangleberrieRangeMini": "Tangleberrie Petitie Range",
-  "botaniaconfigurator.midnightconfig.tangleberrieMaxDistanceMini": "Tangleberrie Petitie Max Distance",
+  "botaniaconfigurator.midnightconfig.tangleberrieRangeMini": "Tangleberrie Petite Range",
+  "botaniaconfigurator.midnightconfig.tangleberrieMaxDistanceMini": "Tangleberrie Petite Max Distance",
 
   "botaniaconfigurator.midnightconfig.tigerseye": "Tigerseye",
   "botaniaconfigurator.midnightconfig.tigerseyeManaCapacity": "Tigerseye Mana Capacity",
