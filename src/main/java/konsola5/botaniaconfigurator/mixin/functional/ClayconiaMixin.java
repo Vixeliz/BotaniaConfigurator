@@ -1,18 +1,18 @@
 package konsola5.botaniaconfigurator.mixin.functional;
 
+import konsola5.botaniaconfigurator.BotaniaConfiguratorBlockTags;
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Blocks;
-import org.spongepowered.asm.mixin.Debug;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import vazkii.botania.common.block.flower.functional.ClayconiaBlockEntity;
-
-import static konsola5.botaniaconfigurator.BotaniaConfigurator.LOGGER;
 
 @Mixin(ClayconiaBlockEntity.class)
 public class ClayconiaMixin {
@@ -56,6 +56,12 @@ public class ClayconiaMixin {
             ci.cancel();
         }
     }
+
+    @Redirect(method = "getCoordsToPut", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/tags/TagKey;)Z"))
+    private boolean configureCheckedBlocks(BlockState instance, TagKey tagKey) {
+        return (ConfigFile.clayconiaDefaultConversion && instance.is(BlockTags.SAND)) || instance.is(BotaniaConfiguratorBlockTags.CLAYCONIA_CONVERTABLE);
+    }
+
 
     /**
      * @author KonSola5

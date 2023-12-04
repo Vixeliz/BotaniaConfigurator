@@ -206,8 +206,10 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "misc", min = 0, max = 100) public static int clayconiaRangeY = 3;
         @Entry(category = "misc", min = 0, max = 100) public static int clayconiaRangeXZMini = 2;
         @Entry(category = "misc", min = 0, max = 100) public static int clayconiaRangeYMini = 1;
-
         @Entry(category = "misc") public static boolean clayconiaBuff = false;
+        @Entry(category = "misc") public static boolean clayconiaDefaultConversion = true;
+        @SuppressWarnings("unused")
+        @Comment(category = "misc") public static Comment clayconiaNote;
 
     @SuppressWarnings("unused")
     @Comment(category = "misc", centered = true) public static Comment daffomill;
