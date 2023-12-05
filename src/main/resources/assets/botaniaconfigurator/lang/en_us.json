@@ -143,9 +143,7 @@
   "botaniaconfigurator.midnightconfig.clayconiaRangeYMini": "Clayconia Petite Vertical Range",
   "botaniaconfigurator.midnightconfig.clayconiaBuff": "Buffed Clayconia Mode",
   "botaniaconfigurator.midnightconfig.clayconiaBuff.tooltip": "When this config option is set to true, Clayconia will replace Sand blocks with Clay blocks instead of dropping Clay Balls.",
-  "botaniaconfigurator.midnightconfig.clayconiaDefaultConversion": "Clayconia's default Sand conversion",
-  "botaniaconfigurator.midnightconfig.clayconiaDefaultConversion.tooltip": "If set to false, the default check for \"#minecraft:sand\"-tagged blocks won't occur.",
-  "botaniaconfigurator.midnightconfig.clayconiaNote": "Clayconia Custom Conversions: Add your block to the \"#botaniaconfigurator:clayconia_convertable\" block tag.",
+  "botaniaconfigurator.midnightconfig.clayconiaNote": "Clayconia Custom Conversions: Add your block to the \"#botaniaconfigurator:clayconia_convertable\" block tag. Use \"\"replace\": true\" if you don't want Sand to convert.",
 
   "botaniaconfigurator.midnightconfig.daffomill": "Daffomill",
   "botaniaconfigurator.midnightconfig.daffomillManaCapacity": "Daffomill Mana Capacity",

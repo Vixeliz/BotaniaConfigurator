@@ -59,7 +59,7 @@ public class ClayconiaMixin {
 
     @Redirect(method = "getCoordsToPut", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/tags/TagKey;)Z"))
     private boolean configureCheckedBlocks(BlockState instance, TagKey tagKey) {
-        return (ConfigFile.clayconiaDefaultConversion && instance.is(BlockTags.SAND)) || instance.is(BotaniaConfiguratorBlockTags.CLAYCONIA_CONVERTABLE);
+        return instance.is(BotaniaConfiguratorBlockTags.CLAYCONIA_CONVERTABLE);
     }
 
 
