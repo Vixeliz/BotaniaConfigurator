@@ -7,9 +7,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import vazkii.botania.common.block.flower.functional.TangleberrieBlockEntity;
-import vazkii.botania.common.block.flower.generating.DandelifeonBlockEntity;
-import vazkii.botania.common.block.flower.generating.KekimurusBlockEntity;
 import vazkii.botania.common.block.flower.generating.MunchdewBlockEntity;
 
 import java.util.Objects;

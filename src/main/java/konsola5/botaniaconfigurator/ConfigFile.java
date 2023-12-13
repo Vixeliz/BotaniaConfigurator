@@ -2,9 +2,9 @@ package konsola5.botaniaconfigurator;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 
-import static konsola5.botaniaconfigurator.BotaniaConfigurator.LOGGER;
-
 import java.util.List;
+
+import static konsola5.botaniaconfigurator.BotaniaConfigurator.LOGGER;
 
 public class ConfigFile extends MidnightConfig {
 

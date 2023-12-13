@@ -5,7 +5,6 @@ import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
-import vazkii.botania.common.item.ManaTabletItem;
 import vazkii.botania.common.item.equipment.bauble.BandOfManaItem;
 
 @Debug(export = true)

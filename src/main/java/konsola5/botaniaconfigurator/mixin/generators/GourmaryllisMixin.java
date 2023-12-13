@@ -3,17 +3,16 @@ package konsola5.botaniaconfigurator.mixin.generators;
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Blocks;
-import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import vazkii.botania.common.block.flower.generating.DandelifeonBlockEntity;
 import vazkii.botania.common.block.flower.generating.GourmaryllisBlockEntity;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 @Mixin(GourmaryllisBlockEntity.class)

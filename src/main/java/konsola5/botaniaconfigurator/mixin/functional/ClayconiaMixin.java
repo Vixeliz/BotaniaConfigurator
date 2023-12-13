@@ -3,7 +3,6 @@ package konsola5.botaniaconfigurator.mixin.functional;
 import konsola5.botaniaconfigurator.BotaniaConfiguratorBlockTags;
 import konsola5.botaniaconfigurator.ConfigFile;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;

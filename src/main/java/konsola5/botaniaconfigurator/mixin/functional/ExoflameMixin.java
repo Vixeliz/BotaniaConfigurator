@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 import vazkii.botania.common.block.flower.functional.ExoflameBlockEntity;
 
 @Mixin(ExoflameBlockEntity.class)

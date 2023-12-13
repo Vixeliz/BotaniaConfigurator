@@ -2,7 +2,6 @@ package konsola5.botaniaconfigurator.mixin.misc;
 
 import konsola5.botaniaconfigurator.ConfigFile;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import vazkii.botania.client.render.block_entity.ManaPoolBlockEntityRenderer;
