@@ -55,7 +55,9 @@
     "generators.ThermalilyMixin",
     "misc.FluxfieldMixin",
     "misc.FluxfieldTRStorageMixin",
-    "misc.ManaPoolMixin"
+    "misc.ManaPoolCartMixin",
+    "misc.ManaPoolMixin",
+    "misc.ManaPoolRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

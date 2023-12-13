@@ -378,6 +378,8 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaPoolCapacity = 1000000;
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int fabulousManaPoolCapacity = 1000000;
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int guiltyPoolCapacity = 1000000;
+        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaCartCapacity = 1000000;
+        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaPumpTransferRate = 10000;
 
 
 }

@@ -288,5 +288,7 @@
   "botaniaconfigurator.midnightconfig.dilutedManaPoolCapacity": "Diluted Mana Pool capacity §o§7(affects newly placed pools)§r",
   "botaniaconfigurator.midnightconfig.manaPoolCapacity": "Mana Pool capacity §o§7(affects newly placed pools)§r",
   "botaniaconfigurator.midnightconfig.fabulousManaPoolCapacity": "Fabulous Mana Pool capacity §o§7(affects newly placed pools)§r",
-  "botaniaconfigurator.midnightconfig.guiltyPoolCapacity": "The Everlasting Guilty Pool capacity §o§7(affects newly placed pools)§r"
+  "botaniaconfigurator.midnightconfig.guiltyPoolCapacity": "The Everlasting Guilty Pool capacity §o§7(affects newly placed pools)§r",
+  "botaniaconfigurator.midnightconfig.manaCartCapacity": "Minecart with Mana Pool capacity",
+  "botaniaconfigurator.midnightconfig.manaPumpTransferRate": "Mana Pump Transfer Rate (per tick)"
 }
