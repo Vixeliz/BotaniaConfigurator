@@ -8,17 +8,17 @@ import vazkii.botania.common.entity.ManaPoolMinecartEntity;
 
 @Mixin(ManaPoolMinecartEntity.class)
 public class ManaPoolCartMixin {
-    @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 1000000.0), remap = false)
+    @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 1000000.0))
     private double modifyPoolCartSize1(double original) {
         return ConfigFile.manaCartCapacity;
     }
 
-    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(doubleValue = 1000000.0), remap = false)
+    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(doubleValue = 1000000.0))
     private double modifyPoolCartSize2(double original) {
         return ConfigFile.manaCartCapacity;
     }
 
-    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(intValue = 1000000), remap = false)
+    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(intValue = 1000000))
     private int modifyPoolCartSize3(int original) {
         return ConfigFile.manaCartCapacity;
     }
@@ -28,7 +28,7 @@ public class ManaPoolCartMixin {
         return ConfigFile.manaCartCapacity;
     }
 
-    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(intValue = 10000), remap = false)
+    @ModifyConstant(method = "moveAlongTrack", constant = @Constant(intValue = 10000))
     private int modifyPumpTransferRate(int original) {
         return ConfigFile.manaPumpTransferRate;
     }

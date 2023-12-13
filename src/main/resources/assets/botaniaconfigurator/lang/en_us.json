@@ -290,5 +290,13 @@
   "botaniaconfigurator.midnightconfig.fabulousManaPoolCapacity": "Fabulous Mana Pool capacity §o§7(affects newly placed pools)§r",
   "botaniaconfigurator.midnightconfig.guiltyPoolCapacity": "The Everlasting Guilty Pool capacity §o§7(affects newly placed pools)§r",
   "botaniaconfigurator.midnightconfig.manaCartCapacity": "Minecart with Mana Pool capacity",
-  "botaniaconfigurator.midnightconfig.manaPumpTransferRate": "Mana Pump Transfer Rate (per tick)"
+  "botaniaconfigurator.midnightconfig.manaPumpTransferRate": "Mana Pump Transfer Rate (per tick)",
+
+  "botaniaconfigurator.midnightconfig.manaRelatedItems": "Mana Related Items",
+  "botaniaconfigurator.midnightconfig.manaTabletCapacity": "Mana Tablet Capacity (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.manaBandCapacity": "Band of Mana Capacity (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.manaBandGreaterCapacity": "Greater Band of Mana Capacity (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.auraBandIntervalMultiplier": "Band of Aura Interval Multiplier (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.auraBandIntervalMultiplier.tooltip": "§nBase interval rates§r:\n> §6Band of Aura§r: 10 t\n> §6Greater Band of Aura§r: 2 t",
+  "botaniaconfigurator.midnightconfig.auraBandManaGenerationRate": "Band of Aura Mana Generation Rate (per interval)"
 }

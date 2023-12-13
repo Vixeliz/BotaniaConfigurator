@@ -370,16 +370,24 @@ public class ConfigFile extends MidnightConfig {
     @SuppressWarnings("unused")
     @Comment(category = "functional", centered = true) public static Comment manaFluxfield;
         @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static double manaFluxfieldRatio = 3;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaFluxfieldCapacity = 3840;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaFluxfieldCapacity = 3840;
 
     @SuppressWarnings("unused")
     @Comment(category = "functional", centered = true) public static Comment manaPools;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int dilutedManaPoolCapacity = 10000;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaPoolCapacity = 1000000;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int fabulousManaPoolCapacity = 1000000;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int guiltyPoolCapacity = 1000000;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaCartCapacity = 1000000;
-        @Entry(category = "functional", min = 0, max = Integer.MAX_VALUE) public static int manaPumpTransferRate = 10000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int dilutedManaPoolCapacity = 10000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaPoolCapacity = 1000000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int fabulousManaPoolCapacity = 1000000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int guiltyPoolCapacity = 1000000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaCartCapacity = 1000000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaPumpTransferRate = 10000;
+
+    @SuppressWarnings("unused")
+    @Comment(category = "functional", centered = true) public static Comment manaRelatedItems;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaTabletCapacity = 500000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaBandCapacity = 500000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaBandGreaterCapacity = 2000000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int auraBandIntervalMultiplier = 5;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int auraBandManaGenerationRate = 5;
 
 
 }

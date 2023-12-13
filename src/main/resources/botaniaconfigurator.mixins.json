@@ -53,11 +53,18 @@
     "generators.ShulkMeNotMixin",
     "generators.SpectrolusMixin",
     "generators.ThermalilyMixin",
+    "misc.BandOfAuraMixin",
+    "misc.BandOfManaImplMixin",
+    "misc.BandOfManaMixin",
     "misc.FluxfieldMixin",
     "misc.FluxfieldTRStorageMixin",
+    "misc.GreaterBandOfManaImplMixin",
+    "misc.GreaterBandOfManaMixin",
+    "misc.ManaItemImplMixin",
     "misc.ManaPoolCartMixin",
     "misc.ManaPoolMixin",
-    "misc.ManaPoolRendererMixin"
+    "misc.ManaPoolRendererMixin",
+    "misc.ManaTabletMixin"
   ],
   "injectors": {
     "defaultRequire": 1
