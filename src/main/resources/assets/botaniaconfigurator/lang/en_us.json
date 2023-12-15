@@ -298,5 +298,10 @@
   "botaniaconfigurator.midnightconfig.manaBandGreaterCapacity": "Greater Band of Mana Capacity (§e⚠ Requires restart!§r)",
   "botaniaconfigurator.midnightconfig.auraBandIntervalMultiplier": "Band of Aura Interval Multiplier (§e⚠ Requires restart!§r)",
   "botaniaconfigurator.midnightconfig.auraBandIntervalMultiplier.tooltip": "§nBase interval rates§r:\n> §6Band of Aura§r: 10 t\n> §6Greater Band of Aura§r: 2 t",
-  "botaniaconfigurator.midnightconfig.auraBandManaGenerationRate": "Band of Aura Mana Generation Rate (per interval)"
+  "botaniaconfigurator.midnightconfig.auraBandManaGenerationRate": "Band of Aura Mana Generation Rate (per interval)",
+
+  "botaniaconfigurator.midnightconfig.elvenGateway": "Elven Gateway",
+  "botaniaconfigurator.midnightconfig.elvenGatewayOpeningCost": "Mana cost for Elven Gateway activation",
+  "botaniaconfigurator.midnightconfig.elvenGatewayTradeCost": "Mana cost per Elven Gateway trade",
+  "botaniaconfigurator.midnightconfig.elvenGatewayMinimumPylons": "Minimum amount of Natura Pylons necessary to activate the Elven Gateway"
 }

@@ -389,5 +389,10 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int auraBandIntervalMultiplier = 5;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int auraBandManaGenerationRate = 5;
 
+    @SuppressWarnings("unused")
+    @Comment(category = "functional", centered = true) public static Comment elvenGateway;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int elvenGatewayOpeningCost = 200000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int elvenGatewayTradeCost = 500;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int elvenGatewayMinimumPylons = 2;
 
 }
