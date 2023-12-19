@@ -401,4 +401,11 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarTicksBeforeLoss = 1000;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarManaLoss = 1;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarManaLossInterval = 1;
+
+    @SuppressWarnings("unused")
+    @Comment(category = "functional", centered = true) public static Comment manaPylon;
+    @Comment(category = "functional") public static Comment manaPylonQuiltInfo;
+    @Entry(category = "functional", min = 0, max = 15) public static float manaPylonEnchantingPower = 8.0f;
+    @Entry(category = "functional", min = 0, max = 15) public static float naturaPylonEnchantingPower = 15.0f;
+    @Entry(category = "functional", min = 0, max = 15) public static float gaiaPylonEnchantingPower = 15.0f;
 }

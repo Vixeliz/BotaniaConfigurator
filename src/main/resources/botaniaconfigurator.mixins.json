@@ -66,6 +66,8 @@
     "misc.ManaPoolMixin",
     "misc.ManaPoolRendererMixin",
     "misc.ManaTabletMixin",
+    "misc.PylonDebugMixin",
+    "misc.PylonMixin",
     "misc.RunicAltarMixin"
   ],
   "injectors": {

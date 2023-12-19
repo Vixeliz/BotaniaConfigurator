@@ -309,5 +309,11 @@
   "botaniaconfigurator.midnightconfig.runicAltarLosesMana": "Runic Altar can lose Mana (§e⚠ Requires restart!§r)",
   "botaniaconfigurator.midnightconfig.runicAltarTicksBeforeLoss": "Time in ticks without Mana increase, after which Runic Altar starts losing Mana",
   "botaniaconfigurator.midnightconfig.runicAltarManaLoss": "Runic Altar Mana Loss (per interval)",
-  "botaniaconfigurator.midnightconfig.runicAltarManaLossInterval": "Runic Altar Mana Loss Interval (in ticks)"
+  "botaniaconfigurator.midnightconfig.runicAltarManaLossInterval": "Runic Altar Mana Loss Interval (in ticks)",
+
+  "botaniaconfigurator.midnightconfig.manaPylon": "Mana Pylon",
+  "botaniaconfigurator.midnightconfig.manaPylonQuiltInfo": "§e⚠ Quilt players§r: Keep this config in sync with data/quilt/attachments/minecraft/block/enchanting_boosters.json!",
+  "botaniaconfigurator.midnightconfig.manaPylonEnchantingPower": "Mana Pylon Enchanting Power (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.naturaPylonEnchantingPower": "Natura Pylon Enchanting Power (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.gaiaPylonEnchantingPower": "Gaia Pylon Enchanting Power (§e⚠ Requires restart!§r)"
 }

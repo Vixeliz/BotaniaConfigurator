@@ -12,8 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.common.block.block_entity.RunicAltarBlockEntity;
 
-import static konsola5.botaniaconfigurator.BotaniaConfigurator.LOGGER;
-
 @Debug(export = true)
 @Mixin(RunicAltarBlockEntity.class)
 public abstract class RunicAltarMixin {
@@ -59,7 +57,6 @@ public abstract class RunicAltarMixin {
 
     @Inject(method = "writePacketNBT", at = @At("TAIL"))
     private void addToNBT(CompoundTag tag, CallbackInfo ci) {
-        LOGGER.info("canLoseMana: " + canLoseMana);
         if (canLoseMana) {
             tag.putInt(TAG_NOT_RECEIVED_MANA_FOR, notReceivedManaForTicks);
             tag.putInt(TAG_PREV_MANA, prevMana);
