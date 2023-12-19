@@ -65,7 +65,8 @@
     "misc.ManaPoolCartMixin",
     "misc.ManaPoolMixin",
     "misc.ManaPoolRendererMixin",
-    "misc.ManaTabletMixin"
+    "misc.ManaTabletMixin",
+    "misc.RunicAltarMixin"
   ],
   "injectors": {
     "defaultRequire": 1

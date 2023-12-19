@@ -395,4 +395,10 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int elvenGatewayTradeCost = 500;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int elvenGatewayMinimumPylons = 2;
 
+    @SuppressWarnings("unused")
+    @Comment(category = "functional", centered = true) public static Comment runicAltar;
+        @Entry(category = "functional") public static boolean runicAltarLosesMana = false;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarTicksBeforeLoss = 1000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarManaLoss = 1;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int runicAltarManaLossInterval = 1;
 }

@@ -303,5 +303,11 @@
   "botaniaconfigurator.midnightconfig.elvenGateway": "Elven Gateway",
   "botaniaconfigurator.midnightconfig.elvenGatewayOpeningCost": "Mana cost for Elven Gateway activation",
   "botaniaconfigurator.midnightconfig.elvenGatewayTradeCost": "Mana cost per Elven Gateway trade",
-  "botaniaconfigurator.midnightconfig.elvenGatewayMinimumPylons": "Minimum amount of Natura Pylons necessary to activate the Elven Gateway"
+  "botaniaconfigurator.midnightconfig.elvenGatewayMinimumPylons": "Minimum amount of Natura Pylons necessary to activate the Elven Gateway",
+
+  "botaniaconfigurator.midnightconfig.runicAltar": "Runic Altar (§e⚠ Experimental!§r)",
+  "botaniaconfigurator.midnightconfig.runicAltarLosesMana": "Runic Altar can lose Mana (§e⚠ Requires restart!§r)",
+  "botaniaconfigurator.midnightconfig.runicAltarTicksBeforeLoss": "Time in ticks without Mana increase, after which Runic Altar starts losing Mana",
+  "botaniaconfigurator.midnightconfig.runicAltarManaLoss": "Runic Altar Mana Loss (per interval)",
+  "botaniaconfigurator.midnightconfig.runicAltarManaLossInterval": "Runic Altar Mana Loss Interval (in ticks)"
 }
