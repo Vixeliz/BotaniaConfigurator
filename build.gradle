@@ -94,7 +94,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	dependencies {
-		modImplementation("vazkii.botania:Botania:1.20.1-441-FABRIC")
+		modImplementation("vazkii.botania:Botania:1.20.1-443-FABRIC")
 
 		modImplementation("com.terraformersmc:modmenu:7.2.2")
 

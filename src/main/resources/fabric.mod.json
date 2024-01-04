@@ -30,7 +30,7 @@
 		"fabricloader": ">=0.14.23",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"botania": ">=1.20.1-441",
+		"botania": ">=1.20.1-443",
 		"fabric-api": "*"
 	},
 	"suggests": {
