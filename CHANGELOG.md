@@ -1,0 +1,1 @@
+Hotfix: Now Pollidisiac mixin works properly with Botania 1.20.1-443-FABRIC.
