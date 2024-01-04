@@ -25,18 +25,18 @@ public class PollidisiacMixin {
         return ConfigFile.pollidisiacManaCost;
     }
 
-    @Redirect(method = "consumeFoodItem", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;addMana(I)V"))
+    @Redirect(method = "consumeFoodItemAndMana", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/functional/PollidisiacBlockEntity;addMana(I)V"))
     public void modifyCost2(PollidisiacBlockEntity instance, int i) {
         instance.addMana(-ConfigFile.pollidisiacManaCost);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;inflate(D)Lnet/minecraft/world/phys/AABB;", ordinal = 0))
+    @Redirect(method = "getItems", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;inflate(D)Lnet/minecraft/world/phys/AABB;"))
     private AABB configureRange1(AABB instance, double value) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.inflate(RANGE);
     }
 
-    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;inflate(D)Lnet/minecraft/world/phys/AABB;", ordinal = 1))
+    @Redirect(method = "getAnimals", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;inflate(D)Lnet/minecraft/world/phys/AABB;"))
     private AABB configureRange2(AABB instance, double value) {
         final int RANGE = ConfigFile.pollidisiacRange;
         return instance.inflate(RANGE);

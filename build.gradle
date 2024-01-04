@@ -1,5 +1,6 @@
 plugins {
-	id 'fabric-loom' version '1.4-SNAPSHOT'
+  id 'fabric-loom' version '1.3.8'
+	// id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -85,7 +86,7 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.layered() {
 		officialMojangMappings()
-		parchment("org.parchmentmc.data:parchment-1.19.3:2023.03.12@zip") // Don't know why Botania uses 1.19.3 parchment data, but ditto.
+		parchment("org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip")
 		//mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -94,7 +95,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	dependencies {
-		modImplementation("vazkii.botania:Botania:1.20.1-443-FABRIC")
+		modImplementation("vazkii.botania:Botania:1.20.1-447-FABRIC")
 
 		modImplementation("com.terraformersmc:modmenu:7.2.2")
 

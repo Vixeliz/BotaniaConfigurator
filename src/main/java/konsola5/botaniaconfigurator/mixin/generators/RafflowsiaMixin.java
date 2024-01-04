@@ -61,6 +61,11 @@ public class RafflowsiaMixin {
         if (index != 0) {
             lastFlowerCount = 0;
         }
+        // I think this breaks stuff but idc atm
+        if (index > getMaxStreak()) {
+            lastFlowerCount = 0;
+            return 0;
+        }
         return STREAK_OUTPUTS[index] / ++lastFlowerCount;
     }
 
