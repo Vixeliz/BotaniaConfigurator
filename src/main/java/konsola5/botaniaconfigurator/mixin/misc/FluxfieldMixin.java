@@ -30,6 +30,15 @@ public class FluxfieldMixin {
         this.energy = (int) Math.min(ConfigFile.manaFluxfieldCapacity, energy + mana * ConfigFile.manaFluxfieldRatio);
     }
 
+    /**
+     * @author KonSola5
+     * @reason Make mana capacity modifiable
+     */
+    @Overwrite(remap = false)
+    public boolean isFull() {
+        return energy >= ConfigFile.manaFluxfieldCapacity;
+    }
+
     @ModifyArg(method = "serverTick", at = @At(
             value = "INVOKE",
             target = "Ljava/lang/Math;min(II)I"

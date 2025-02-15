@@ -381,6 +381,13 @@ public class ConfigFile extends MidnightConfig {
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaCartCapacity = 1000000;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaPumpTransferRate = 10000;
 
+    @Comment(category = "functional", centered = true) public static Comment manaSpreaders;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaSpreaderTicks = 60;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaSpreaderMaxMana = 1000;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static float manaSpreaderLossRate = 4f;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static float manaSpreaderSpeed = 1f;
+        @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaSpreaderBurst = 160;
+
     @SuppressWarnings("unused")
     @Comment(category = "functional", centered = true) public static Comment manaRelatedItems;
         @Entry(category = "functional", min = 1, max = Integer.MAX_VALUE) public static int manaTabletCapacity = 500000;
